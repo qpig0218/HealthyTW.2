@@ -47,6 +47,28 @@
         .content-section.active {
             display: block;
         }
+        /* Styling for strategy/execution details */
+        .strategy-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .strategy-details.open {
+            max-height: 500px; /* Adjust as needed for content length */
+            transition: max-height 0.5s ease-in;
+        }
+        .strategy-header {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .strategy-header span {
+            transition: transform 0.3s ease-in-out;
+        }
+        .strategy-header.open span {
+            transform: rotate(90deg);
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -81,7 +103,7 @@
         <section id="overview" class="content-section active">
             <h2 class="text-3xl font-bold text-center mb-4 text-slate-900">範疇二：規劃多元人才培訓</h2>
             <p class="text-center max-w-3xl mx-auto text-gray-600 mb-12">
-                本計畫聚焦於強化醫事人才的教育訓練與職涯成長。透過數位學習、跨域合作及明確的職涯路徑，我們旨在培育具備現代醫療所需技能的專業人員，並提升其留任發展的意願與能力。
+                範疇二著重於強化持續教育與專業發展、促進跨領域合作與學習，並建立明確職涯發展路徑，以提升醫療人員的專業成長和長期留任動能，呼應本院EVP(員工價值主張)的精神。透過推動CBME/EPA等能力本位教育模式、導入AI Coach智慧教練與數位學習平台等創新方案，逐年打造具持續學習與跨域合作文化的人才培育體系，提升員工投入度與組織韌性。
             </p>
 
             <div class="grid md:grid-cols-3 gap-8 text-center">
@@ -106,30 +128,55 @@
         <!-- Section: Objective 1 -->
         <section id="objective1" class="content-section">
             <h2 class="text-3xl font-bold mb-2 text-slate-900">目標一：提供持續教育與專業發展機會</h2>
-            <p class="text-lg text-gray-600 mb-8 max-w-4xl">建立健全的持續教育體系，鼓勵醫事人員終身學習，不斷精進臨床技能與專業素養，提供彈性多元的進修管道。</p>
+            <p class="text-lg text-gray-600 mb-8 max-w-4xl">建立健全的持續教育體系，鼓勵醫事人員終身學習，不斷精進臨床技能與專業素養。同時透過數位化平台與資源，提供彈性多元的進修管道，讓醫事人員能方便地獲取新知並應用於臨床實務，保持醫療照護水準隨醫療新知不斷提升。</p>
             <div class="grid lg:grid-cols-5 gap-8">
                 <div class="lg:col-span-2 bg-white p-6 rounded-xl shadow-lg">
                     <h3 class="font-bold text-xl mb-4 text-teal-800">核心策略</h3>
                     <ul class="space-y-4">
-                        <li class="flex items-start">
-                            <span class="text-teal-500 text-xl mr-3 mt-1">💻</span>
-                            <div>
-                                <h4 class="font-semibold">建置數位學習平台</h4>
-                                <p class="text-gray-500 text-sm">打造院內數位學習平台，彙整線上課程與資源，支援行動學習。</p>
+                        <li>
+                            <div class="strategy-header font-semibold text-gray-800 text-lg mb-2" data-target="strategy1-1">
+                                建置數位學習平台與資源
+                                <span class="text-xl transform transition-transform duration-300">›</span>
+                            </div>
+                            <div id="strategy1-1" class="strategy-details text-gray-500 text-sm">
+                                <p>打造院內數位學習平台，彙整線上課程、臨床指引及醫學知識庫，方便醫事人員利用零碎時間進修學習。平台導入互動教學及行動學習功能，提高學習彈性與便利性。同時成立專責的數位教育團隊或中心，負責數位課程開發與平台維護，以確保教育資源的持續更新。</p>
+                                <p class="mt-2 font-medium">執行方法：</p>
+                                <ul class="list-disc list-inside ml-4">
+                                    <li>第一年完成數位學習平台架設與試運行，提供基礎課程（如醫院規章、核心臨床技能）上線。</li>
+                                    <li>第二年起擴充課程主題，涵蓋臨床新知、醫療品質、安全、防疫以及管理溝通等，並與國內外開放課程資源（MOOCs）連結。</li>
+                                    <li>持續優化使用者體驗與行動學習功能，鼓勵醫事人員利用平台自主學習。</li>
+                                </ul>
                             </div>
                         </li>
-                        <li class="flex items-start">
-                            <span class="text-teal-500 text-xl mr-3 mt-1">📚</span>
-                             <div>
-                                <h4 class="font-semibold">推動多元課程工作坊</h4>
-                                <p class="text-gray-500 text-sm">定期規劃臨床技能、新興科技、人文關懷等多元主題課程。</p>
+                        <li>
+                            <div class="strategy-header font-semibold text-gray-800 text-lg mb-2" data-target="strategy1-2">
+                                推動持續教育課程與工作坊
+                                <span class="text-xl transform transition-transform duration-300">›</span>
+                            </div>
+                            <div id="strategy1-2" class="strategy-details text-gray-500 text-sm">
+                                <p>定期規劃多元主題的進修課程與工作坊，包含臨床專科技能、新興醫療科技、醫療品質管理、病人溝通、人文關懷等，滿足不同職類與職等人員的學習需求。透過課程模組化設計與彈性選修，讓醫師、護理師、檢驗師等都能依自身職涯發展需求選讀相關課程。特別針對AI醫療、數位技能等新興領域開設系列工作坊，提升醫事人員之數位素養與創新能力。</p>
+                                <p class="mt-2 font-medium">執行方法：</p>
+                                <ul class="list-disc list-inside ml-4">
+                                    <li>每年辦理至少4梯次以上院級訓練課程或論壇，例如「醫療AI應用工作坊」、「臨床決策最新指引研討會」等。</li>
+                                    <li>課程講師來源多元，包含院內專家及外部學者，以確保內容前瞻性。</li>
+                                    <li>課程採取實務導向，鼓勵學員將所學應用於工作並分享經驗。</li>
+                                    <li>建立課後反馈機制，持續優化課程內容與教學方式。</li>
+                                </ul>
                             </div>
                         </li>
-                        <li class="flex items-start">
-                             <span class="text-teal-500 text-xl mr-3 mt-1">🏆</span>
-                             <div>
-                                <h4 class="font-semibold">鼓勵進修與專業認證</h4>
-                                <p class="text-gray-500 text-sm">制定獎勵措施，將進修成果納入晉升考量，營造學習風氣。</p>
+                        <li>
+                            <div class="strategy-header font-semibold text-gray-800 text-lg mb-2" data-target="strategy1-3">
+                                鼓勵進修與專業認證
+                                <span class="text-xl transform transition-transform duration-300">›</span>
+                            </div>
+                            <div id="strategy1-3" class="strategy-details text-gray-500 text-sm">
+                                <p>制定醫事人員進修與認證獎勵措施，鼓勵主動參與院內外進修培訓。對於取得專業認證、學位或完成一定進修時數的員工，給予學分或證書，並將其納入晉升考量，作為職涯發展加分項。透過制度誘因，營造主動學習風氣，提升整體醫療團隊的專業能量。</p>
+                                <p class="mt-2 font-medium">執行方法：</p>
+                                <ul class="list-disc list-inside ml-4">
+                                    <li>提供進修補助與公假制度，支持醫事人員參與外部專科訓練或學位進修。</li>
+                                    <li>建立進修學習時數記錄與回饋機制，員工每年須達成一定持續教育學分。</li>
+                                    <li>對於考取專科醫師、專科護理師、醫事檢驗師高級證照等同仁予以表揚，並在年度績效評估與職級晉升時予以考量。</li>
+                                </ul>
                             </div>
                         </li>
                     </ul>
@@ -139,6 +186,10 @@
                      <div class="chart-container mx-auto max-w-xl">
                         <canvas id="objective1Chart"></canvas>
                     </div>
+                    <div class="mt-8 text-center text-gray-600">
+                        <p class="font-semibold mb-2">預期成效說明：</p>
+                        <p class="text-sm">數位學習平台使用率預計從第一年的60%提升至第五年的90%以上，數位課程修習人次每年成長至少15%。醫事人員參與院內持續教育課程的比例將從第一年的70%提升至第五年的90%以上，尤其在AI及數位技能培訓方面，第一年即有80%的目標對象完成訓練。預計五年內完成進修或認證的人次增加30%以上，員工專業成長滿意度提升15%以上。</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -146,37 +197,70 @@
         <!-- Section: Objective 2 -->
         <section id="objective2" class="content-section">
             <h2 class="text-3xl font-bold mb-2 text-slate-900">目標二：促進醫事人員跨領域合作與學習</h2>
-            <p class="text-lg text-gray-600 mb-8 max-w-4xl">打破專業藩籬，營造跨領域協作的學習環境，培養系統思維與溝通協作能力，提高醫療團隊整體實力。</p>
+            <p class="text-lg text-gray-600 mb-8 max-w-4xl">打破專業藩籬，營造跨領域協作的學習環境，讓不同科別、不同職類的醫事人員共同交流學習。藉由跨團隊合作與知識分享，培養醫療人員的系統思維與溝通協作能力，提高醫療團隊整體的綜合實力。同時引入其他領域的新知（如資訊、工程、人文社會）豐富醫療觀點，打造具備多元視野的醫療人才。</p>
             <div class="grid lg:grid-cols-5 gap-8">
                 <div class="lg:col-span-2 bg-white p-6 rounded-xl shadow-lg">
                      <h3 class="font-bold text-xl mb-4 text-teal-800">核心策略</h3>
                     <ul class="space-y-4">
-                        <li class="flex items-start">
-                             <span class="text-teal-500 text-xl mr-3 mt-1">👥</span>
-                            <div>
-                                <h4 class="font-semibold">落實跨專業教育 (IPE)</h4>
-                                <p class="text-gray-500 text-sm">透過模擬情境演練，增進團隊溝通、決策協調與角色分工。</p>
+                        <li>
+                            <div class="strategy-header font-semibold text-gray-800 text-lg mb-2" data-target="strategy2-1">
+                                落實跨專業教育（IPE）與團隊合作培訓
+                                <span class="text-xl transform transition-transform duration-300">›</span>
+                            </div>
+                            <div id="strategy2-1" class="strategy-details text-gray-500 text-sm">
+                                <p>將跨專業教育理念融入院內訓練課程，定期舉辦模擬情境演練、團隊工作坊，讓醫師、護理師、藥師、社工師等協同參與，以增進彼此了解與協作。培訓內容強調團隊溝通、決策協調及角色分工，培養團隊照護模式所需之技能與態度。透過各專業協力解決臨床案例，提升醫療服務的整合性。</p>
+                                <p class="mt-2 font-medium">執行方法：</p>
+                                <ul class="list-disc list-inside ml-4">
+                                    <li>每年至少舉辦2次跨專業團隊情境模擬訓練（例如模擬急診重大傷患處置，由醫師、護理、放射、藥劑等團隊合作演練）。</li>
+                                    <li>建立「跨專業教育日」，安排各單位人員共同參與工作坊或病例討論。</li>
+                                    <li>課程結束後透過團隊表現評估工具評量協作成效，作為持續改進依據。</li>
+                                </ul>
                             </div>
                         </li>
-                        <li class="flex items-start">
-                             <span class="text-teal-500 text-xl mr-3 mt-1">🧩</span>
-                            <div>
-                                <h4 class="font-semibold">整合跨域學習模組</h4>
-                                <p class="text-gray-500 text-sm">建置個人化學習選課系統(ILP)，鼓勵選修其他領域課程。</p>
+                        <li>
+                            <div class="strategy-header font-semibold text-gray-800 text-lg mb-2" data-target="strategy2-2">
+                                整合院內共同課程與跨域學習模組
+                                <span class="text-xl transform transition-transform duration-300">›</span>
+                            </div>
+                            <div id="strategy2-2" class="strategy-details text-gray-500 text-sm">
+                                <p>開發並整合全院適用的共同課程，打造跨職類個人化學習選課系統（Individual Learning Portfolio, ILP）。透過此系統，醫事人員可依興趣與職涯需求選修其他領域的課程模組，例如醫護人員學習基礎資訊程式設計，資訊人員學習醫學基礎知識，或臨床人員學習管理溝通等。此舉不僅充實員工多面向知識，也促進不同部門人員在課堂中互動交流，培養多元合作風氣。</p>
+                                <p class="mt-2 font-medium">執行方法：</p>
+                                <ul class="list-disc list-inside ml-4">
+                                    <li>第一年盤點現有院內教育課程並建置ILP選課平台雛型。</li>
+                                    <li>第二年起將醫院各單位專業課程（如品質管理、資訊安全、人文關懷等）納入平台，並與外部教育資源（大學、線上課程）連結。</li>
+                                    <li>制定跨域課程修習獎勵，例如完成特定跨域學習模組可獲得學分證明。</li>
+                                    <li>每年評估跨領域課程的選修人數與滿意度，持續調整課程供給。</li>
+                                </ul>
                             </div>
                         </li>
-                        <li class="flex items-start">
-                            <span class="text-teal-500 text-xl mr-3 mt-1">💡</span>
-                            <div>
-                                <h4 class="font-semibold">推動協作專案與論壇</h4>
-                                <p class="text-gray-500 text-sm">舉辦跨部門專案競賽與交流論壇，刺激創意思維。</p>
+                        <li>
+                            <div class="strategy-header font-semibold text-gray-800 text-lg mb-2" data-target="strategy2-3">
+                                推動跨部門協作專案與交流論壇
+                                <span class="text-xl transform transition-transform duration-300">›</span>
+                            </div>
+                            <div id="strategy2-3" class="strategy-details text-gray-500 text-sm">
+                                <p>鼓勵醫事人員參與跨部門或跨院的協作專案，以實際問題為導向組成多專業團隊，共同研議創新解決方案。透過專案合作增進不同領域人員協調合作的經驗。同時定期舉辦「Chi Mei Talk」等跨領域交流論壇，擴大既有的院內「YY Talk」分享活動規模。邀請醫療、科技、人文社會等不同背景的專家演講，帶來多元觀點刺激醫事人員的創意思維。</p>
+                                <p class="mt-2 font-medium">執行方法：</p>
+                                <ul class="list-disc list-inside ml-4">
+                                    <li>建立跨部門創新專案競賽或補助機制，每年選拔並資助數件由不同單位人員共同參與的創新計畫，內容可涵蓋醫療流程改善、智慧醫療應用、患者體驗提升等。</li>
+                                    <li>舉辦年度跨領域論壇，第一年以院內交流為主，第三年起擴大為區域性甚至全國性研討會，分享跨域合作成果與經驗。</li>
+                                    <li>透過論壇和競賽，營造組織內部跨領域創新的文化與網絡。</li>
+                                </ul>
                             </div>
                         </li>
-                         <li class="flex items-start">
-                            <span class="text-teal-500 text-xl mr-3 mt-1">🌐</span>
-                            <div>
-                                <h4 class="font-semibold">強化數位及管理素養</h4>
-                                <p class="text-gray-500 text-sm">成立"AI Everywhere"團隊，推動數位轉型專案與人才輪調。</p>
+                         <li>
+                            <div class="strategy-header font-semibold text-gray-800 text-lg mb-2" data-target="strategy2-4">
+                                強化數位及管理素養跨域培育
+                                <span class="text-xl transform transition-transform duration-300">›</span>
+                            </div>
+                            <div id="strategy2-4" class="strategy-details text-gray-500 text-sm">
+                                <p>結合範疇三的智慧醫療推動，鼓勵醫事人員參與數位轉型相關的跨域專案與訓練。例如成立“AI Everywhere”跨域團隊，由醫療人員與資訊工程人員共同參與，針對院內流程開發AI應用解決方案。亦鼓勵醫事人員涉獵醫療以外的管理、資訊、外語等技能，透過內部輪調或外部進修拓展視野，為日後承擔管理職務或與產學合作奠定基礎。</p>
+                                <p class="mt-2 font-medium">執行方法：</p>
+                                <ul class="list-disc list-inside ml-4">
+                                    <li>由醫院教學中心牽頭組成跨部門數位轉型工作小組，招募對AI、資訊有興趣的臨床人員參與，共同推動院內數位創新專案。</li>
+                                    <li>制定人才輪調計畫，每年選派一定名額的臨床人員至資訊、管理等部門短期學習，反之亦安排行政人員至臨床單位見習，增進彼此領域理解。</li>
+                                    <li>針對語言能力，加強醫事人員英語溝通課程，以利吸收國際新知及參與國際交流。</li>
+                                </ul>
                             </div>
                         </li>
                     </ul>
@@ -191,6 +275,10 @@
                             <canvas id="objective2Chart2"></canvas>
                         </div>
                     </div>
+                    <div class="mt-8 text-center text-gray-600">
+                        <p class="font-semibold mb-2">預期成效說明：</p>
+                        <p class="text-sm">跨專業教育課程參與率將逐年上升，預計第二年有超過50%的醫事人員參與過至少一門跨領域課程或團隊訓練，第五年跨域課程總選修人次增加一倍以上。每年院內發起的跨部門協作專案數至少5件以上，專案成果應用於臨床或管理實務的比例持續提高。在模擬演練評估中，各專業人員協同作業效率和正確率逐年提高，團隊溝通失誤率下降。醫事人員回饋顯示對他專業角色的理解度提升，以5分滿分計算的團隊協作素養自評平均分數五年內提升20%以上（由計畫前之約4.0提升至4.8）。</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -203,32 +291,67 @@
                 <div class="lg:col-span-2 bg-white p-6 rounded-xl shadow-lg">
                      <h3 class="font-bold text-xl mb-4 text-teal-800">核心策略</h3>
                     <ul class="space-y-4">
-                        <li class="flex items-start">
-                            <span class="text-teal-500 text-xl mr-3 mt-1">🎯</span>
-                            <div>
-                                <h4 class="font-semibold">導入CBME/EPA里程碑制度</h4>
-                                <p class="text-gray-500 text-sm">以能力為導向，定義各階段需掌握的技能與責任。</p>
+                        <li>
+                            <div class="strategy-header font-semibold text-gray-800 text-lg mb-2" data-target="strategy3-1">
+                                全面導入CBME/EPA里程碑評估制度
+                                <span class="text-xl transform transition-transform duration-300">›</span>
+                            </div>
+                            <div id="strategy3-1" class="strategy-details text-gray-500 text-sm">
+                                <p>成立臨床能力評估委員會，負責規劃並推動以能力為導向的評估制度。釐清不同階段（住院醫師、主治醫師、護理師各職等）的核心勝任力清單，制定對應的EPA里程碑，明確定義每個階段需要掌握的技能與責任範疇。逐步在院內各臨床科別實施里程碑評估，將其結果作為晉升考核和職涯諮詢的重要依據，確保人員發展與臨床能力相匹配。</p>
+                                <p class="mt-2 font-medium">執行方法：</p>
+                                <ul class="list-disc list-inside ml-4">
+                                    <li>第一年完成核心能力與EPA里程碑的制定，試辦於選定科別，並培訓評估者。</li>
+                                    <li>第二至三年將CBME評估擴大至全院所有住院醫師培訓計畫及主要護理單位，建立標準化的評估流程與回饋機制。</li>
+                                    <li>第五年達成全面實施，所有相關培訓計畫皆導入CBME/EPA評估模式。</li>
+                                </ul>
                             </div>
                         </li>
-                        <li class="flex items-start">
-                            <span class="text-teal-500 text-xl mr-3 mt-1">🗂️</span>
-                            <div>
-                                <h4 class="font-semibold">建置個人化職涯檔案 (e-Portfolio)</h4>
-                                <p class="text-gray-500 text-sm">數位化記錄學習成果、技能評估，方便追蹤成長進度。</p>
+                        <li>
+                            <div class="strategy-header font-semibold text-gray-800 text-lg mb-2" data-target="strategy3-2">
+                                建置個人化職涯發展檔案（e-Portfolio）
+                                <span class="text-xl transform transition-transform duration-300">›</span>
+                            </div>
+                            <div id="strategy3-2" class="strategy-details text-gray-500 text-sm">
+                                <p>開發智慧型職涯與學習歷程檔案系統，記錄每位醫事人員的學習成果、技能評估、證照資格等資訊。運用區塊鏈或其他安全技術確保紀錄不可篡改且終身可追溯，方便人員隨時查詢自身里程碑達成進度。該系統亦可彙整A+能力評估工具之結果，自動分析個人優勢與待加強領域，提供量化的職涯發展建議。</p>
+                                <p class="mt-2 font-medium">執行方法：</p>
+                                <ul class="list-disc list-inside ml-4">
+                                    <li>第一年完成e-Portfolio系統架構設計與核心功能開發，同步建置關鍵評估指標與資料庫。</li>
+                                    <li>第二年試行於新進人員與受訓住院醫師，收集使用者反饋優化系統介面與功能。</li>
+                                    <li>第三年起全面推廣至全院醫事人員，每年度更新個人檔案內容並與人力資源系統連結，用於年度評估與職涯面談。</li>
+                                    <li>到第五年，e-Portfolio成為醫事人員標準配備，每位員工均有完整的數位職涯檔案。</li>
+                                </ul>
                             </div>
                         </li>
-                        <li class="flex items-start">
-                            <span class="text-teal-500 text-xl mr-3 mt-1">🤖</span>
-                            <div>
-                                <h4 class="font-semibold">導入AI導師 (AI Coach)</h4>
-                                <p class="text-gray-500 text-sm">提供個性化職涯輔導，分析能力缺口並推薦學習機會。</p>
+                        <li>
+                            <div class="strategy-header font-semibold text-gray-800 text-lg mb-2" data-target="strategy3-3">
+                                導入AI導師（AI Coach）輔導機制
+                                <span class="text-xl transform transition-transform duration-300">›</span>
+                            </div>
+                            <div id="strategy3-3" class="strategy-details text-gray-500 text-sm">
+                                <p>運用人工智慧技術建立AI線上學習導師系統，為醫事人員提供個性化的職涯輔導。AI導師可根據e-Portfolio中的數據，主動分析個人學習曲線與能力缺口，推薦適合的進修課程或訓練機會，並及時給予反饋。例如，提醒某醫師尚未達成特定EPA里程碑時，建議參與對應專科訓練；或根據其興趣與強項，提供科研、行政管理等不同職涯路徑發展資訊。AI導師輔以定期的人資或資深同儕職涯導談機制，雙管齊下協助員工制定並調整個人職涯發展計畫。</p>
+                                <p class="mt-2 font-medium">執行方法：</p>
+                                <ul class="list-disc list-inside ml-4">
+                                    <li>與資訊部門合作開發AI導師系統模型，導入院內歷年人才培育與績效資料進行機器學習訓練。</li>
+                                    <li>第一年完成AI導師原型設計並在少部分人員中試用，第二年優化算法提升建議精準度並全面上線。</li>
+                                    <li>安排每位員工每年至少1次與主管或職涯導師面談，討論AI導師提供的建議並記錄發展計畫。</li>
+                                    <li>持續監測AI導師的使用率與員工滿意度，確保此輔助機制有效有用。</li>
+                                </ul>
                             </div>
                         </li>
-                         <li class="flex items-start">
-                            <span class="text-teal-500 text-xl mr-3 mt-1">🔄</span>
-                            <div>
-                                <h4 class="font-semibold">建立諮詢與輪調制度</h4>
-                                <p class="text-gray-500 text-sm">提供一對一諮詢、職涯講座與職務輪調，拓展專業視野。</p>
+                         <li>
+                            <div class="strategy-header font-semibold text-gray-800 text-lg mb-2" data-target="strategy3-4">
+                                建立職涯發展諮詢與輪調制度
+                                <span class="text-xl transform transition-transform duration-300">›</span>
+                            </div>
+                            <div id="strategy3-4" class="strategy-details text-gray-500 text-sm">
+                                <p>設立職涯發展諮詢服務，由專責人員或資深員工擔任職涯顧問，提供一對一諮詢協助員工規劃生涯。定期舉辦職涯發展講座，介紹臨床、教研、行政等不同發展路徑的所需條件與心得，讓員工了解多元發展機會。推行職務輪調計畫，例如鼓勵醫師至醫學教育或研究單位歷練，護理人員輪調不同科別，拓展專業視野並發掘興趣專長，塑造彈性多元的職涯道路。</p>
+                                <p class="mt-2 font-medium">執行方法：</p>
+                                <ul class="list-disc list-inside ml-4">
+                                    <li>每季度提供職涯諮詢門診服務，由培訓專家或資深主管為員工解惑並提供建議。</li>
+                                    <li>設立線上職涯資訊平台，公開各職級晉升資格、進修資源與典範案例，強化職涯資訊的透明度。</li>
+                                    <li>制定人才輪調計畫，每年選派一定比例的人員進行跨部門或跨專業輪調，並將輪調經歷納入個人評核。</li>
+                                    <li>在職涯講座中邀請高年資醫師、護理長分享職涯心得，營造良師益友文化。</li>
+                                </ul>
                             </div>
                         </li>
                     </ul>
@@ -243,6 +366,10 @@
                             <canvas id="objective3Chart2"></canvas>
                         </div>
                     </div>
+                    <div class="mt-8 text-center text-gray-600">
+                        <p class="font-semibold mb-2">預期成效說明：</p>
+                        <p class="text-sm">透過CBME/EPA制度落地，預計超過90%的醫事人員表示清楚瞭解本職務晉升所需達成的里程碑，較計畫實施前提升30%以上。第五年預計80%以上的醫師完成其階層應具備的能力指標。第一年已成立臨床能力評估委員會並完成A+能力評估工具的建置，第五年將建立完整的能力評估與認證機制。到第三年，e-Portfolio數位職涯檔案將為全院100%的醫事人員建立完成，AI職涯導師使用率逐年攀升，超過80%的員工定期參考其建議。五年內醫院內部晉升人次明顯增加，優秀人才留任率提升，離職率降低，確保醫療人力的永續供給。</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -254,19 +381,29 @@
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
                 <div class="bg-white p-6 rounded-xl shadow-lg">
                     <p class="text-4xl font-bold text-teal-600">+25%</p>
-                    <p class="font-semibold text-gray-700 mt-2">平均受訓時數</p>
+                    <p class="font-semibold text-gray-700 mt-2">平均受訓時數提升</p>
+                    <p class="text-gray-500 text-sm">每人每年平均受訓時數較計畫前提升25%，培訓完成率達90%以上。</p>
                 </div>
                 <div class="bg-white p-6 rounded-xl shadow-lg">
                     <p class="text-4xl font-bold text-teal-600">+50%</p>
-                    <p class="font-semibold text-gray-700 mt-2">跨域合作專案</p>
+                    <p class="font-semibold text-gray-700 mt-2">跨域合作專案數成長</p>
+                    <p class="text-gray-500 text-sm">跨部門/跨專業合作專案數量較計畫實施前成長逾50%，超過80%醫事人員曾參與跨領域課程。</p>
                 </div>
                 <div class="bg-white p-6 rounded-xl shadow-lg">
                     <p class="text-4xl font-bold text-teal-600">+15%</p>
-                    <p class="font-semibold text-gray-700 mt-2">職涯發展滿意度</p>
+                    <p class="font-semibold text-gray-700 mt-2">職涯發展滿意度提升</p>
+                    <p class="text-gray-500 text-sm">員工對職涯發展支援的滿意度較基準提升15%，100%員工擁有明確記錄的職涯發展路徑。</p>
                 </div>
                 <div class="bg-white p-6 rounded-xl shadow-lg">
                     <p class="text-4xl font-bold text-teal-600">98%</p>
                     <p class="font-semibold text-gray-700 mt-2">住院醫師考核通過率</p>
+                    <p class="text-gray-500 text-sm">住院醫師結業考核一次通過率達到98%，較計畫前提升5個百分點。</p>
+                </div>
+                 <div class="col-span-2 md:col-span-4 bg-white p-6 rounded-xl shadow-lg mt-6">
+                    <h3 class="font-bold text-xl mb-4 text-center text-teal-800">組織人力發展永續性</h3>
+                    <p class="text-gray-600 text-sm text-center">
+                        綜合以上成果，醫院將形成良性的人才發展生態系統。人員留任率提升、離職率下降，組織關鍵職缺的接續有人才可以補位，降低因人力斷層導致的風險。醫院也因為投入人才培育而獲得醫學中心評鑑相關加分或嘉許，在業界樹立重視人才發展的品牌形象，長遠而言提高醫療服務品質並促進醫療體系永續發展。
+                    </p>
                 </div>
             </div>
         </section>
@@ -527,6 +664,18 @@
             // Initialize: show the overview section and render its charts (if any)
             showSection('overview');
             setActiveNavLink('overview'); // Ensure overview nav link is active on load
+
+            // Toggle strategy details
+            document.querySelectorAll('.strategy-header').forEach(header => {
+                header.addEventListener('click', () => {
+                    const targetId = header.dataset.target;
+                    const details = document.getElementById(targetId);
+                    if (details) {
+                        details.classList.toggle('open');
+                        header.classList.toggle('open');
+                    }
+                });
+            });
         });
     </script>
 </body>
