@@ -114,17 +114,17 @@
             </p>
 
             <div class="grid md:grid-cols-3 gap-8 text-center mb-12">
-                <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200/80">
+                <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200/80 cursor-pointer hover:shadow-lg hover:scale-105 transition-all duration-300" data-card-target="objective1">
                     <div class="text-5xl mb-3">🎓</div>
                     <h3 class="text-xl font-semibold mb-2 text-teal-800">目標一：提供持續教育與專業發展機會</h3>
                     <p class="text-gray-500 text-sm">建立健全的持續教育體系，鼓勵醫事人員終身學習，不斷精進臨床技能與專業素養。</p>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200/80">
+                <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200/80 cursor-pointer hover:shadow-lg hover:scale-105 transition-all duration-300" data-card-target="objective2">
                     <div class="text-5xl mb-3">🤝</div>
                     <h3 class="text-xl font-semibold mb-2 text-teal-800">目標二：促進醫事人員跨領域合作與學習</h3>
                     <p class="text-gray-500 text-sm">打破專業藩籬，營造跨領域協作的學習環境，培養系統思維與溝通協作能力。</p>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200/80">
+                <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200/80 cursor-pointer hover:shadow-lg hover:scale-105 transition-all duration-300" data-card-target="objective3">
                     <div class="text-5xl mb-3">🚀</div>
                     <h3 class="text-xl font-semibold mb-2 text-teal-800">目標四：建立明確職涯發展路徑</h3>
                     <p class="text-gray-500 text-sm">透過制度化的職涯規劃與能力評估機制，為醫事人員打造清晰的職涯發展藍圖。</p>
@@ -702,6 +702,15 @@
                         details.classList.toggle('open');
                         header.classList.toggle('open');
                     }
+                });
+            });
+
+            // Card navigation functionality
+            document.querySelectorAll('[data-card-target]').forEach(card => {
+                card.addEventListener('click', () => {
+                    const targetSection = card.getAttribute('data-card-target');
+                    showSection(targetSection);
+                    setActiveNavLink(targetSection);
                 });
             });
         });
