@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>多元人才培訓（持續教育與職涯發展）- 互動儀表板</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Serene Professional -->
+    <!-- Application Structure Plan: Changed from a top-down scrollable dashboard to a tabbed interface for section-based viewing. The main navigation bar now acts as tabs, where clicking a tab (Overview, Objective 1-3, Assessment) will display only the content related to that specific section, hiding all other main content sections. This structure enhances user focus by presenting one logical block of information at a time, preventing content overload and making navigation explicit, especially useful for detailed reports. -->
+    <!-- Visualization & Content Choices: The application continues to use Chart.js for data visualization with Line, Bar, and Doughnut charts, chosen for their effectiveness in showing trends, comparisons, and proportions respectively. Key metrics are highlighted in static cards. The interaction now focuses on tab-based navigation, allowing users to switch between major report sections. Each section presents its strategies and key outcomes using these visualizations and textual summaries. This segmented approach, with charts nested within relevant sections, maintains clarity and user understanding within the new tabbed structure. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', 'Noto Sans TC', sans-serif;
+            background-color: #f8fafc; /* slate-50 */
+            color: #1e293b; /* slate-800 */
+        }
+        .nav-link {
+            transition: color 0.3s, border-bottom-color 0.3s;
+        }
+        .nav-link.active, .nav-link:hover {
+            color: #0d9488; /* teal-600 */
+            border-bottom-color: #0d9488;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            height: 320px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        /* Hide all content sections by default */
+        .content-section {
+            display: none;
+        }
+        /* Show only the active content section */
+        .content-section.active {
+            display: block;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
+        <div class="container mx-auto px-4">
+            <nav class="flex items-center justify-between h-20">
+                <h1 class="text-xl md:text-2xl font-bold text-teal-700">人才培訓計畫</h1>
+                <div class="hidden md:flex items-center space-x-6 lg:space-x-8">
+                    <a href="#overview" class="nav-link text-gray-600 font-medium pb-1 border-b-2 border-transparent active" data-section="overview">總覽</a>
+                    <a href="#objective1" class="nav-link text-gray-600 font-medium pb-1 border-b-2 border-transparent" data-section="objective1">目標一</a>
+                    <a href="#objective2" class="nav-link text-gray-600 font-medium pb-1 border-b-2 border-transparent" data-section="objective2">目標二</a>
+                    <a href="#objective3" class="nav-link text-gray-600 font-medium pb-1 border-b-2 border-transparent" data-section="objective3">目標三</a>
+                    <a href="#assessment" class="nav-link text-gray-600 font-medium pb-1 border-b-2 border-transparent" data-section="assessment">效益評估</a>
+                </div>
+                 <div class="md:hidden">
+                    <select id="mobile-nav" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-teal-500 focus:ring-teal-500">
+                        <option value="overview">總覽</option>
+                        <option value="objective1">目標一</option>
+                        <option value="objective2">目標二</option>
+                        <option value="objective3">目標三</option>
+                        <option value="assessment">效益評估</option>
+                    </select>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8 md:py-12">
+        <!-- Section: Overview -->
+        <section id="overview" class="content-section active">
+            <h2 class="text-3xl font-bold text-center mb-4 text-slate-900">範疇二：規劃多元人才培訓</h2>
+            <p class="text-center max-w-3xl mx-auto text-gray-600 mb-12">
+                本計畫聚焦於強化醫事人才的教育訓練與職涯成長。透過數位學習、跨域合作及明確的職涯路徑，我們旨在培育具備現代醫療所需技能的專業人員，並提升其留任發展的意願與能力。
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200/80">
+                    <div class="text-5xl mb-3">🎓</div>
+                    <h3 class="text-xl font-semibold mb-2 text-teal-800">提供持續教育機會</h3>
+                    <p class="text-gray-500">建立數位學習平台與多元課程，鼓勵終身學習，目標將員工專業成長滿意度提升15%以上。</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200/80">
+                    <div class="text-5xl mb-3">🤝</div>
+                    <h3 class="text-xl font-semibold mb-2 text-teal-800">促進跨領域合作</h3>
+                    <p class="text-gray-500">打破專業藩籬，推動團隊合作培訓與跨部門專案，目標團隊協作素養分數提升至4.8分。</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200/80">
+                    <div class="text-5xl mb-3">🚀</div>
+                    <h3 class="text-xl font-semibold mb-2 text-teal-800">建立明確職涯路徑</h3>
+                    <p class="text-gray-500">導入能力導向評估與AI導師，讓職涯發展路徑清晰可視，目標90%以上員工清楚晉升標準。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Objective 1 -->
+        <section id="objective1" class="content-section">
+            <h2 class="text-3xl font-bold mb-2 text-slate-900">目標一：提供持續教育與專業發展機會</h2>
+            <p class="text-lg text-gray-600 mb-8 max-w-4xl">建立健全的持續教育體系，鼓勵醫事人員終身學習，不斷精進臨床技能與專業素養，提供彈性多元的進修管道。</p>
+            <div class="grid lg:grid-cols-5 gap-8">
+                <div class="lg:col-span-2 bg-white p-6 rounded-xl shadow-lg">
+                    <h3 class="font-bold text-xl mb-4 text-teal-800">核心策略</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <span class="text-teal-500 text-xl mr-3 mt-1">💻</span>
+                            <div>
+                                <h4 class="font-semibold">建置數位學習平台</h4>
+                                <p class="text-gray-500 text-sm">打造院內數位學習平台，彙整線上課程與資源，支援行動學習。</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-teal-500 text-xl mr-3 mt-1">📚</span>
+                             <div>
+                                <h4 class="font-semibold">推動多元課程工作坊</h4>
+                                <p class="text-gray-500 text-sm">定期規劃臨床技能、新興科技、人文關懷等多元主題課程。</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                             <span class="text-teal-500 text-xl mr-3 mt-1">🏆</span>
+                             <div>
+                                <h4 class="font-semibold">鼓勵進修與專業認證</h4>
+                                <p class="text-gray-500 text-sm">制定獎勵措施，將進修成果納入晉升考量，營造學習風氣。</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="lg:col-span-3 bg-white p-6 rounded-xl shadow-lg">
+                    <h3 class="font-bold text-xl mb-4 text-center text-teal-800">關鍵成果指標 (五年計畫)</h3>
+                     <div class="chart-container mx-auto max-w-xl">
+                        <canvas id="objective1Chart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Objective 2 -->
+        <section id="objective2" class="content-section">
+            <h2 class="text-3xl font-bold mb-2 text-slate-900">目標二：促進醫事人員跨領域合作與學習</h2>
+            <p class="text-lg text-gray-600 mb-8 max-w-4xl">打破專業藩籬，營造跨領域協作的學習環境，培養系統思維與溝通協作能力，提高醫療團隊整體實力。</p>
+            <div class="grid lg:grid-cols-5 gap-8">
+                <div class="lg:col-span-2 bg-white p-6 rounded-xl shadow-lg">
+                     <h3 class="font-bold text-xl mb-4 text-teal-800">核心策略</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                             <span class="text-teal-500 text-xl mr-3 mt-1">👥</span>
+                            <div>
+                                <h4 class="font-semibold">落實跨專業教育 (IPE)</h4>
+                                <p class="text-gray-500 text-sm">透過模擬情境演練，增進團隊溝通、決策協調與角色分工。</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                             <span class="text-teal-500 text-xl mr-3 mt-1">🧩</span>
+                            <div>
+                                <h4 class="font-semibold">整合跨域學習模組</h4>
+                                <p class="text-gray-500 text-sm">建置個人化學習選課系統(ILP)，鼓勵選修其他領域課程。</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-teal-500 text-xl mr-3 mt-1">💡</span>
+                            <div>
+                                <h4 class="font-semibold">推動協作專案與論壇</h4>
+                                <p class="text-gray-500 text-sm">舉辦跨部門專案競賽與交流論壇，刺激創意思維。</p>
+                            </div>
+                        </li>
+                         <li class="flex items-start">
+                            <span class="text-teal-500 text-xl mr-3 mt-1">🌐</span>
+                            <div>
+                                <h4 class="font-semibold">強化數位及管理素養</h4>
+                                <p class="text-gray-500 text-sm">成立"AI Everywhere"團隊，推動數位轉型專案與人才輪調。</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="lg:col-span-3 bg-white p-6 rounded-xl shadow-lg">
+                    <h3 class="font-bold text-xl mb-4 text-center text-teal-800">關鍵成果指標</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                         <div class="chart-container mx-auto max-w-md">
+                            <canvas id="objective2Chart1"></canvas>
+                        </div>
+                        <div class="chart-container mx-auto max-w-md">
+                            <canvas id="objective2Chart2"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Objective 3 -->
+        <section id="objective3" class="content-section">
+            <h2 class="text-3xl font-bold mb-2 text-slate-900">目標三：建立明確職涯發展路徑</h2>
+            <p class="text-lg text-gray-600 mb-8 max-w-4xl">為醫事人員打造清晰的職涯發展藍圖，以能力為核心，結合數位工具，增進人員自我發展的動機。</p>
+             <div class="grid lg:grid-cols-5 gap-8">
+                <div class="lg:col-span-2 bg-white p-6 rounded-xl shadow-lg">
+                     <h3 class="font-bold text-xl mb-4 text-teal-800">核心策略</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <span class="text-teal-500 text-xl mr-3 mt-1">🎯</span>
+                            <div>
+                                <h4 class="font-semibold">導入CBME/EPA里程碑制度</h4>
+                                <p class="text-gray-500 text-sm">以能力為導向，定義各階段需掌握的技能與責任。</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-teal-500 text-xl mr-3 mt-1">🗂️</span>
+                            <div>
+                                <h4 class="font-semibold">建置個人化職涯檔案 (e-Portfolio)</h4>
+                                <p class="text-gray-500 text-sm">數位化記錄學習成果、技能評估，方便追蹤成長進度。</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-teal-500 text-xl mr-3 mt-1">🤖</span>
+                            <div>
+                                <h4 class="font-semibold">導入AI導師 (AI Coach)</h4>
+                                <p class="text-gray-500 text-sm">提供個性化職涯輔導，分析能力缺口並推薦學習機會。</p>
+                            </div>
+                        </li>
+                         <li class="flex items-start">
+                            <span class="text-teal-500 text-xl mr-3 mt-1">🔄</span>
+                            <div>
+                                <h4 class="font-semibold">建立諮詢與輪調制度</h4>
+                                <p class="text-gray-500 text-sm">提供一對一諮詢、職涯講座與職務輪調，拓展專業視野。</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="lg:col-span-3 bg-white p-6 rounded-xl shadow-lg">
+                    <h3 class="font-bold text-xl mb-4 text-center text-teal-800">關鍵成果指標</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                         <div class="chart-container mx-auto max-w-md">
+                            <canvas id="objective3Chart1"></canvas>
+                        </div>
+                        <div class="chart-container mx-auto max-w-md">
+                            <canvas id="objective3Chart2"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Assessment -->
+        <section id="assessment" class="content-section">
+             <h2 class="text-3xl font-bold mb-2 text-slate-900">總體效益評估</h2>
+            <p class="text-lg text-gray-600 mb-8 max-w-4xl">本計畫預期將帶來明確且可衡量的效益，全面提升人才培育質量與組織人力發展的永續性。</p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <p class="text-4xl font-bold text-teal-600">+25%</p>
+                    <p class="font-semibold text-gray-700 mt-2">平均受訓時數</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <p class="text-4xl font-bold text-teal-600">+50%</p>
+                    <p class="font-semibold text-gray-700 mt-2">跨域合作專案</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <p class="text-4xl font-bold text-teal-600">+15%</p>
+                    <p class="font-semibold text-gray-700 mt-2">職涯發展滿意度</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <p class="text-4xl font-bold text-teal-600">98%</p>
+                    <p class="font-semibold text-gray-700 mt-2">住院醫師考核通過率</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center py-6 mt-12 bg-slate-100 border-t">
+        <p class="text-gray-500">多元人才培訓計畫互動儀表板 &copy; 2025</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const chartFontColor = '#334155'; // slate-700
+            const gridColor = '#e2e8f0'; // slate-200
+
+            // Helper function to render or update a chart
+            const renderChart = (ctx, chartConfig) => {
+                const existingChart = Chart.getChart(ctx);
+                if (existingChart) {
+                    existingChart.destroy(); // Destroy existing chart to prevent re-initialization issues
+                }
+                new Chart(ctx, chartConfig);
+            };
+
+            // Objective 1 Chart Config
+            const obj1ChartConfig = {
+                type: 'line',
+                data: {
+                    labels: ['第一年', '第二年', '第三年', '第四年', '第五年'],
+                    datasets: [{
+                        label: '數位學習參與率 (%)',
+                        data: [60, null, 80, null, 90],
+                        borderColor: '#0d9488', // teal-600
+                        backgroundColor: 'rgba(13, 148, 136, 0.1)',
+                        fill: true,
+                        tension: 0.4,
+                        spanGaps: true,
+                    }, {
+                        label: '教育訓練覆蓋率 (%)',
+                        data: [70, null, null, null, 90],
+                        borderColor: '#0891b2', // cyan-600
+                        backgroundColor: 'rgba(8, 145, 178, 0.1)',
+                        fill: true,
+                        tension: 0.4,
+                        spanGaps: true,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: { display: true, text: '學習與訓練覆蓋率逐年目標', color: chartFontColor, font: { size: 16 } },
+                        tooltip: { mode: 'index', intersect: false }
+                    },
+                    scales: {
+                        y: { 
+                            beginAtZero: true, 
+                            max: 100, 
+                            ticks: { color: chartFontColor },
+                            grid: { color: gridColor }
+                        },
+                        x: { 
+                            ticks: { color: chartFontColor },
+                            grid: { display: false }
+                        }
+                    }
+                }
+            };
+
+            // Objective 2 Chart 1 Config
+            const obj2Chart1Config = {
+                type: 'bar',
+                data: {
+                    labels: ['計畫前', '計畫後'],
+                    datasets: [{
+                        label: '團隊協作素養 (5分制)',
+                        data: [4.0, 4.8],
+                        backgroundColor: ['#ccfbf1', '#0d9488'], // teal-100, teal-600
+                        borderColor: '#0f766e', // teal-700
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y',
+                    plugins: {
+                        title: { display: true, text: '團隊協作能力提升', color: chartFontColor, font: { size: 16 } },
+                        legend: { display: false }
+                    },
+                     scales: {
+                        x: { 
+                            beginAtZero: true,
+                            max: 5,
+                            ticks: { color: chartFontColor },
+                            grid: { color: gridColor }
+                        },
+                        y: {
+                            ticks: { color: chartFontColor },
+                            grid: { display: false }
+                        }
+                    }
+                }
+            };
+
+            // Objective 2 Chart 2 Config
+            const obj2Chart2Config = {
+                type: 'doughnut',
+                data: {
+                    labels: ['已參與跨域課程/訓練', '尚未參與'],
+                    datasets: [{
+                        data: [50, 50],
+                        backgroundColor: ['#0d9488', '#f0fdfa'], // teal-600, teal-50
+                        borderColor: '#ccfbf1', // teal-100
+                        hoverOffset: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: { display: true, text: '第二年跨域課程參與率目標 (50%)', color: chartFontColor, font: { size: 16 } },
+                        legend: { position: 'bottom', labels: { color: chartFontColor }}
+                    },
+                    cutout: '60%'
+                }
+            };
+
+            // Objective 3 Chart 1 Config
+            const obj3Chart1Config = {
+                type: 'doughnut',
+                data: {
+                    labels: ['清楚路徑者', '不清楚者'],
+                    datasets: [{
+                        data: [90, 10],
+                        backgroundColor: ['#0891b2', '#ecfeff'], // cyan-600, cyan-50
+                        borderColor: '#bae6fd', // sky-200
+                        hoverOffset: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: { display: true, text: '職涯路徑清晰度 (>90%)', color: chartFontColor, font: { size: 16 } },
+                         legend: { position: 'bottom', labels: { color: chartFontColor }}
+                    },
+                     cutout: '60%'
+                }
+            };
+            
+            // Objective 3 Chart 2 Config
+            const obj3Chart2Config = {
+                type: 'bar',
+                data: {
+                    labels: ['e-Portfolio覆蓋率 (Y3)', 'AI導師使用率 (Y5)', '醫師里程碑達成率 (Y5)'],
+                    datasets: [{
+                        label: '目標達成率 (%)',
+                        data: [100, 80, 80],
+                        backgroundColor: ['#0891b2', '#0891b2', '#0891b2'], // cyan-600
+                        borderColor: '#0e7490', // cyan-700
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: { display: true, text: '數位工具與能力達成率', color: chartFontColor, font: { size: 16 } },
+                        legend: { display: false }
+                    },
+                    scales: {
+                         y: { 
+                            beginAtZero: true,
+                            max: 100,
+                            ticks: { color: chartFontColor },
+                            grid: { color: gridColor }
+                        },
+                        x: {
+                            ticks: { color: chartFontColor,
+                                     font: { size: 10 }
+                            },
+                            grid: { display: false }
+                        }
+                    }
+                }
+            };
+
+            // Map sections to their chart configs
+            const sectionCharts = {
+                'objective1': [{ id: 'objective1Chart', config: obj1ChartConfig }],
+                'objective2': [
+                    { id: 'objective2Chart1', config: obj2Chart1Config },
+                    { id: 'objective2Chart2', config: obj2Chart2Config }
+                ],
+                'objective3': [
+                    { id: 'objective3Chart1', config: obj3Chart1Config },
+                    { id: 'objective3Chart2', config: obj3Chart2Config }
+                ]
+            };
+
+            const contentSections = document.querySelectorAll('.content-section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const mobileNav = document.getElementById('mobile-nav');
+
+            const showSection = (sectionId) => {
+                contentSections.forEach(section => {
+                    section.classList.remove('active');
+                    section.style.display = 'none'; // Explicitly hide
+                });
+                const targetSection = document.getElementById(sectionId);
+                if (targetSection) {
+                    targetSection.classList.add('active');
+                    targetSection.style.display = 'block'; // Explicitly show
+
+                    // Re-render charts for the active section to ensure responsiveness
+                    if (sectionCharts[sectionId]) {
+                        sectionCharts[sectionId].forEach(chartInfo => {
+                            const ctx = document.getElementById(chartInfo.id).getContext('2d');
+                            renderChart(ctx, chartInfo.config);
+                        });
+                    }
+                }
+            };
+
+            const setActiveNavLink = (sectionId) => {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                });
+                const activeLink = document.querySelector(`.nav-link[data-section="${sectionId}"]`);
+                if (activeLink) {
+                    activeLink.classList.add('active');
+                }
+                // Update mobile select
+                if (mobileNav) {
+                    mobileNav.value = sectionId;
+                }
+            };
+
+            // Event listeners for desktop navigation
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const sectionId = link.getAttribute('data-section');
+                    showSection(sectionId);
+                    setActiveNavLink(sectionId);
+                });
+            });
+            
+            // Event listener for mobile navigation
+            mobileNav.addEventListener('change', (e) => {
+                const sectionId = e.target.value;
+                showSection(sectionId);
+                setActiveNavLink(sectionId);
+            });
+
+            // Initialize: show the overview section and render its charts (if any)
+            showSection('overview');
+            setActiveNavLink('overview'); // Ensure overview nav link is active on load
+        });
+    </script>
+</body>
+</html>
