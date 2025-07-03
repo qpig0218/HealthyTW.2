@@ -9,10 +9,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
-    <!-- Chosen Palette: Serene Professional -->
-    <!-- Application Structure Plan: The SPA's structure is focused on "範疇二: 規劃多元人才培訓" and its three core objectives. It utilizes a tabbed interface where clicking a navigation link (總覽, 目標一, 目標二, 目標三, 效益評估) displays only the content of the selected section. This design prioritizes user focus on the main talent training pillars. Content from the "鯉躍計劃" is integrated directly into the corresponding strategies and key results of these three objectives, rather than creating separate tabs for each "鯉躍計劃" sub-area. This ensures a comprehensive yet focused presentation of the report's "範疇二" content, enhancing readability and direct relevance. -->
-    <!-- Visualization & Content Choices: Chart.js is employed for dynamic visualizations (Line, Bar, Doughnut charts) to effectively convey quantitative data such as participation rates, competency scores, and achievement targets. Each chart is placed within its respective objective section to provide immediate visual context to the described strategies and outcomes. Key numerical results are also presented as prominent stat cards. Detailed textual explanations of strategies and execution methods, extracted and synthesized from the "鯉躍計劃" PDF, are embedded within expandable sections, allowing users to dive deeper into the implementation details. This mixed-media approach ensures all report information is consumed effectively. -->
-    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
     <style>
         body {
             font-family: 'Inter', 'Noto Sans TC', sans-serif;
@@ -152,7 +148,7 @@
                     <a href="#objective3" class="nav-link text-gray-600 font-medium pb-1 border-b-2 border-transparent" data-section="objective3">明確職涯發展路徑</a>
                     <a href="#assessment" class="nav-link text-gray-600 font-medium pb-1 border-b-2 border-transparent" data-section="assessment">效益評估</a>
                 </div>
-                 <div class="md:hidden">
+                   <div class="md:hidden">
                     <select id="mobile-nav" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-teal-500 focus:ring-teal-500">
                         <option value="overview">總覽</option>
                         <option value="objective1">持續教育與專業發展</option>
@@ -204,62 +200,111 @@
                     <ul class="space-y-4">
                         <li>
                             <div class="strategy-header font-semibold text-gray-800 text-lg mb-2" data-target="strategy1-1">
-                                建立能力本位的持續教育計畫 (CBME/EPA)
+                                01-1 專業教育：建立專業能力本位的持續教育計畫(CBME/EPA/CCC)
                                 <span class="text-xl transform transition-transform duration-300">›</span>
                             </div>
                             <div id="strategy1-1" class="strategy-details text-gray-500 text-sm">
                                 <p>推動能力本位醫學教育框架，強化員工專業培訓體系，解決傳統時間導向訓練缺乏明確能力評估架構、學生臨床能力與實務落差大、回饋不及時等痛點。</p>
                                 <p class="mt-2 font-medium">主要執行步驟：</p>
                                 <ul class="list-disc list-inside ml-4">
-                                    <li><b>114年</b>：成立臨床能力評估委員會，制定CBME/EPA推動藍圖與評估工具；研擬培訓模組，確認各職類核心能力項目，開發對應培訓課程與評量標準；選擇重點科別試行能力評估與反饋機制，收集數據優化培訓方案。</li>
-                                    <li><b>115年</b>：將CBME/EPA評估模式擴大至全院主要科別與職能訓練項目，定期施行能力評估。</li>
-                                    <li><b>118年</b>：將持續教育相關規定納入院內人事與醫品制度，規範每位專業人員每年須完成一定進修學分，確保終身學習文化扎根。</li>
+                                    <li><b>114年</b>：成立臨床能力評估委員會(CCC)（委員會正式成立並運作）；制定CBME/EPA推動藍圖與評估工具（完成需求評估與初步規劃）；制定能力評估與反饋機制（完成機制設計草案）。<br>
+                                        年度重要查核點: 正式成立「臨床能力評估委員會(CCC)」, 完成CBME/EPA 需求評估報告, 制定推動藍圖草案, 召開至少2次委員會議。</li>
+                                    <li><b>115年</b>：成立臨床能力評估委員會(CCC)（委員會持續運作，每季召開會議）；制定CBME/EPA推動藍圖與評估工具（完成70%工具開發並試行）；制定能力評估與反饋機制（機制正式運作，覆蓋50%醫事職類）。<br>
+                                        年度重要查核點: CBME/EPA評估工具完成70%開發, 至少3個醫事職類開始試行, 完成首批30%人員能力評估, 產出第一版評估報告。</li>
+                                    <li><b>116年</b>：成立臨床能力評估委員會(CCC)（持續運作，優化評估流程）；制定CBME/EPA推動藍圖與評估工具（完成85%工具開發，全面推行）；制定能力評估與反饋機制（機制優化升級，覆蓋85%醫事職類）。<br>
+                                        年度重要查核點: CBME/EPA評估工具完成85%並通過信效度驗證, 7個醫事職類全面實施, 完成70%人員能力評估與認證, 發布CBME/EPA實施成效白皮書。</li>
+                                    <li><b>117年</b>：成立臨床能力評估委員會(CCC)（持續運作，成為決策中樞）；制定CBME/EPA推動藍圖與評估工具（完成98%工具開發，持續優化）；制定能力評估與反饋機制（機制全面運作，覆蓋95%醫事職類）。<br>
+                                        年度重要查核點: CBME/EPA評估工具完成98%並獲國際認證, 全院醫事職類100%導入, 85%人員完成進階能力認證, 舉辦全國CBME 經驗分享論壇, 發表2篇國際期刊論文。</li>
+                                    <li><b>118年</b>：成立臨床能力評估委員會(CCC)（持續運作，齊頭全國發展）；制定CBME/EPA推動藍圖與評估工具（100%完成，齊頭國家標準）；制定能力評估與反饋機制（機制永續運作，覆蓋100%醫事職類）。<br>
+                                        年度重要查核點: CBME/EPA成為衛福部採認標準, 100%人員完成多階能力認證, 承辦亞太CBME 高峰會, 發表「奇美醫院醫學教育白皮書」完整版, 5篇國際期刊論文。</li>
                                 </ul>
                             </div>
                         </li>
                         <li>
                             <div class="strategy-header font-semibold text-gray-800 text-lg mb-2" data-target="strategy1-2">
-                                啟用數位學習平台與AI教練機制
+                                01-2 數位賦能：迎接AI新紀元
                                 <span class="text-xl transform transition-transform duration-300">›</span>
                             </div>
                             <div id="strategy1-2" class="strategy-details text-gray-500 text-sm">
                                 <p>導入智慧學習工具，促進自主學習與數位賦能，以解決醫療環境數位技能不足、人員對智慧醫療工具接受度低等問題。</p>
                                 <p class="mt-2 font-medium">主要執行步驟：</p>
                                 <ul class="list-disc list-inside ml-4">
-                                    <li><b>114年</b>：建置院內數位學習平台（如「奇美學習雲」），匯集各領域線上課程；引進AI智慧學習教練試點，提供個人化學習建議與輔導；辦理數位平台操作與AI Coach應用說明會，提升員工數位學習意願。</li>
-                                    <li><b>115年</b>：規劃將數位學習平台課程納入員工在職教育必修內容，每人每年須完成規定學習時數；擴充AI Coach覆蓋範圍，新進人員入職培訓全部採用AI教練輔助。</li>
-                                    <li><b>118年</b>：持續投入資源更新數位學習內容與AI教學功能，保持培訓課程的前瞻性與實用性。</li>
+                                    <li><b>114年</b>：建立在地化數位能力教育框架（完成需求調查與框架草案）；建立AI輔助學習與決策支援系統（完成系統規劃與供應商評選）；建立AI分級進階制度與提供技術相關課程培訓（完成課程規劃）。<br>
+                                        年度重要查核點: 成立數位賦能教育籌備小組, 完成數位能力需求調查, 產出教育框架草案, 確定AI系統供應商。</li>
+                                    <li><b>115年</b>：建立在地化數位能力教育框架（框架正式發布，開始實施）；建立AI輔助學習與決策支援系統（系統建置65%，部分功能上線）；建立AI分級進階制度與提供技術相關課程培訓（完成50%人員基礎培訓）。<br>
+                                        年度重要查核點: 數位能力教育框架正式實施, AI系統核心功能上線並有30%使用率, 50%醫事人員完成AI基礎課程, 建立AI能力分級標準。</li>
+                                    <li><b>116年</b>：建立在地化數位能力教育框架（框架優化更新，涵蓋進階應用）；建立AI輔助學習與決策支援系統（系統建置80%，主要功能完備）；建立AI分級進階制度與提供技術相關課程培訓（完成65%人員進階培訓）。<br>
+                                        年度重要查核點: AI系統整合臨床決策支援功能, 使用率達60%, 65%醫事人員取得AI 進階認證, 建立3個AI臨床應用示範案例, 獲得使用者滿意度85%。</li>
+                                    <li><b>117年</b>：建立在地化數位能力教育框架（框架成為業界標竿，對外輸出）；建立AI輔助學習與決策支援系統（系統建置90%，AI深度應用）；建立AI分級進階制度與提供技術相關課程培訓（完成80%人員高階培訓）。<br>
+                                        年度重要查核點: AI系統整合預測分析功能, 使用率達75%, 80%醫事人員取得AI 高階認證, 建立10個AI創新應用案例, 成為微軟AI醫療示範點, 舉辦AI醫療應用論壇。</li>
+                                    <li><b>118年</b>：建立在地化數位能力教育框架（框架成為國家參考標準）；建立AI輔助學習與決策支援系統（系統100%完成，全面智慧化）；建立AI分級進階制度與提供技術相關課程培訓（90%人員取得最高認證）。<br>
+                                        年度重要查核點: AI系統獲FDA/TFDA認證, 使用率達93%, 90%醫事人員成為AI應用專家, 10個 AI創新獲專利, 成為國內數位健康示範中心, 發表「奇美醫院AI導入白皮書」。</li>
                                 </ul>
                             </div>
                         </li>
                         <li>
                             <div class="strategy-header font-semibold text-gray-800 text-lg mb-2" data-target="strategy1-3">
-                                鼓勵進修與專業認證
+                                01-3 人機協作：啟用數位學習平台與AI教練機制
                                 <span class="text-xl transform transition-transform duration-300">›</span>
                             </div>
                             <div id="strategy1-3" class="strategy-details text-gray-500 text-sm">
-                                <p>制定醫事人員進修與認證獎勵措施，鼓勵主動參與院內外進修培訓，營造主動學習風氣，提升整體醫療團隊的專業能量。</p>
+                                <p>導入智慧學習工具，促進自主學習與數位賦能，以解決醫療環境數位技能不足、人員對智慧醫療工具接受度低等問題。</p>
                                 <p class="mt-2 font-medium">主要執行步驟：</p>
                                 <ul class="list-disc list-inside ml-4">
-                                    <li>提供進修補助與公假制度，支持醫事人員參與外部專科訓練或學位進修。</li>
-                                    <li>建立進修學習時數記錄與回饋機制，員工每年須達成一定持續教育學分。</li>
-                                    <li>對於考取專科醫師、專科護理師、醫事檢驗師高級證照等同仁予以表揚，並在年度績效評估與職級晉升時予以考量。</li>
-                                    <li><b>118年</b>：爭取獲得國家級教學醫院或人才培訓中心認證，對外展現本院人才培育成果與品質。</li>
+                                    <li><b>114年</b>：建置數位學習平台（完成平台需求分析與架構設計）；引進AI智慧學習教練（完成AI教練功能規劃）；辦理數位平台與AI教練應用培訓（規劃培訓課程）；推動Vibe Coding個人工作數位化計畫（完成計畫設計）。<br>
+                                        年度重要查核點: 完成數位學習平台需求分析報告, 確定平台架構設計, 完成Vibe Coding 計畫書, 招募種子教師10名。</li>
+                                    <li><b>115年</b>：建置數位學習平台（平台建置65%，核心功能上線）；引進AI智慧學習教練（AI教練55%功能開發，開始試用）；辦理數位平台與AI教練應用培訓（完成50%員工培訓）；推動Vibe Coding個人工作數位化計畫（40%員工開始使用）。<br>
+                                        年度重要查核點: 數位學習平台正式上線運作, 月活躍用戶達40%, AI教練完成個人化推薦功能, 50%員工完成培訓, Vibe Coding 產出首批數位化工作流程10個。</li>
+                                    <li><b>116年</b>：建置數位學習平台（平台建置75%，功能持續優化）；引進AI智慧學習教練（AI教練70%功能完成，個人化服務成熟）；辦理數位平台與AI教練應用培訓（完成65%員工進階培訓）；推動Vibe Coding個人工作數位化計畫（60%員工常態使用）。<br>
+                                        年度重要查核點: 數位學習平台月活躍用戶達65%, AI教練提供個人化學習路徑準確率85%, 完成30個部門工作流程數位化, 產出數位轉型最佳實務手冊。</li>
+                                    <li><b>117年</b>：建置數位學習平台（平台建置85%，智慧化功能完備）；引進AI智慧學習教練（AI教練85%功能完成，提供預測性輔導）；辦理數位平台與AI教練應用培訓（完成80%員工高階培訓）；推動Vibe Coding個人工作數位化計畫（75%員工深度應用）。<br>
+                                        年度重要查核點: 數位平台月活躍用戶達80%, AI教練預測學習需求準確率90%, 完成50個部門工作流程智慧化, 獲得國家數位轉型獎, 產出3個可對外輸出的數位解決方案。</li>
+                                    <li><b>118年</b>：建置數位學習平台（平台100%完成，成為智慧學習標竿）；引進AI智慧學習教練（AI教練95%功能完成，自主進化能力）；辦理數位平台與AI教練應用培訓（90%員工成為數位導師）；推動Vibe Coding個人工作數位化計畫（90%員工創造數位創新）。<br>
+                                        年度重要查核點: 平台月活躍率90%並輸出10家醫院, AI教練自主學習進化, 全院70個部門完成數位轉型, 成為Newsweek 全球百大智慧醫院。</li>
                                 </ul>
                             </div>
                         </li>
                         <li>
                             <div class="strategy-header font-semibold text-gray-800 text-lg mb-2" data-target="strategy1-4">
-                                融入醫學人文與醫品病安教育
+                                01-4 終生學習：鼓勵進修與專業認證
                                 <span class="text-xl transform transition-transform duration-300">›</span>
                             </div>
                             <div id="strategy1-4" class="strategy-details text-gray-500 text-sm">
+                                <p>制定醫事人員進修與認證獎勵措施，鼓勵主動參與院內外進修培訓，營造主動學習風氣，提升整體醫療團隊的專業能量。</p>
+                                <p class="mt-2 font-medium">主要執行步驟：</p>
+                                <ul class="list-disc list-inside ml-4">
+                                    <li><b>114年</b>：提供進修補助與公假制度（完成制度草案設計）；成立奇美海外Faculty及海外進修智慧資源暨問答平台（完成規劃）；與國外醫院或學研機構簽訂人才進修MOU（啟動洽談）；建立奇美線上課程平臺CM Coursera（完成平台規劃）。<br>
+                                        年度重要查核點: 完成進修補助制度草案, 啟動1家國際機構 MOU洽談, 完成CM Coursera 平台規劃書。</li>
+                                    <li><b>115年</b>：提供進修補助與公假制度（制度正式實施，使用率55%）；成立奇美海外Faculty及海外進修智慧資源暨問答平台（平台建置45%）；與國外醫院或學研機構簽訂人才進修MOU（完成2件MOU簽訂）；建立奇美線上課程平臺CM Coursera（平台上線，55%課程建置）。<br>
+                                        年度重要查核點: 進修補助制度正式實施並有100人次申請, 簽訂2件國際MOU(含1件114年洽談案) CM Coursera 上線50門課程, 月活躍學習者200人。</li>
+                                    <li><b>116年</b>：提供進修補助與公假制度（制度優化調整，使用率70%）；成立奇美海外Faculty及海外進修智慧資源暨問答平台（平台建置70%並運作）；與國外醫院或學研機構簽訂人才進修MOU（累計3件MOU，啟動交流）；建立奇美線上課程平臺CM Coursera（平台功能完善，75%課程上線）。<br>
+                                        年度重要查核點: 進修補助申請達300人次, 海外Faculty 平台有50位專家加入, 3件MOU實質交流20人次, CM Coursera 上線100門課程, 月活躍學習者500人。</li>
+                                    <li><b>117年</b>：提供進修補助與公假制度（制度成熟運作，使用率85%）；成立奇美海外Faculty及海外進修智慧資源暨問答平台（平台建置85%，國際化運作）；與國外醫院或學研機構簽訂人才進修MOU（累計4件MOU，深度合作）；建立奇美線上課程平臺Chi Mei Coursera（平台國際化，90%課程上線）。<br>
+                                        年度重要查核點: 進修補助申請達500人次, 海外Faculty 平台有100位國際專家, 4件 MOU交流50人次, Chi Mei Coursera 上線150門課程(含20門英文課程), 月活躍學習者800人。</li>
+                                    <li><b>118年</b>：提供進修補助與公假制度（制度最佳化，使用率95%）；成立奇美海外Faculty及海外進修智慧資源暨問答平台（平台100%完成，全球連結）；與國外醫院或學研機構簽訂人才進修MOU（累計5件MOU，策略聯盟）；建立奇美線上課程平臺Chi Mei Coursera（平台國際認證，95%課程上線）。<br>
+                                        年度重要查核點: 進修補助受益 XXX人次, 海外 Faculty 達 XXX位, 5件MOU交流 XX人次 Chi Mei Coursera 獲國際認證(200門課程, 50門國際課程), 月活躍學習者 XXX人。</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="strategy-header font-semibold text-gray-800 text-lg mb-2" data-target="strategy1-5">
+                                01-5 多元教育：融入醫學人文與醫品病安教育
+                                <span class="text-xl transform transition-transform duration-300">›</span>
+                            </div>
+                            <div id="strategy1-5" class="strategy-details text-gray-500 text-sm">
                                 <p>在持續教育中融入醫學人文素養與醫品病安意識的培養，提升醫療人員全方位的專業能力。</p>
                                 <p class="mt-2 font-medium">主要執行步驟：</p>
                                 <ul class="list-disc list-inside ml-4">
-                                    <li><b>醫學人文</b>：推動敘事+實證醫學+敘事（創意三明治）、創新藝術治療、醫病故事分享與哲學對話等活動。採用創新教育理論架構，如反思學習、批判性思維、視覺思考策略（VTS）等。</li>
-                                    <li><b>醫品病安</b>：推動認知建構理論於醫品病安教育中的實證研究。導入藝術與音樂教育融入醫品病安教學。建立病安教育研究的標準化評量工具。</li>
-                                    <li><b>118年</b>：醫學教育課程納入系統化醫品病安教育比率達90%。</li>
+                                    <li><b>114年</b>：創建「醫學人文素養培育計畫」（完成計畫架構設計）；成立「跨專業醫學教育暨醫品病安研究團隊」（團隊正式成立）；推動「敘事醫學與哲學對話工作坊」（舉辦1次試行工作坊）；發展「藝術與醫療跨域共融活動」（完成活動規劃）；發展A+臨床模擬病安教育創新教案平台（完成需求評估）。<br>
+                                        年度重要查核點: 跨專業醫學教育暨醫品病安研究團隊正式成立, 完成醫學人文計畫架構, 舉辦1次試行工作坊。</li>
+                                    <li><b>115年</b>：創建「醫學人文素養培育計畫」（開發4套課程模組，開始實施）；成立「跨專業醫學教育暨醫品病安研究團隊」（執行5案研究）；推動「敘事醫學與哲學對話工作坊」（舉辦5次工作坊）；發展「藝術與醫療跨域共融活動」（參與人次比例25%）；發展A+臨床模擬病安教育創新教案平台（開發6套教案並試教）。<br>
+                                        年度重要查核點: 完成4套醫學人文課程開發並有200人次參與, 5案研究進行中(含2篇論文投稿), 舉辦5次工作坊共150人參與, 開發6套A+教案並完成試教評估。</li>
+                                    <li><b>116年</b>：創建「醫學人文素養培育計畫」（開發6套課程模組，融入常規教育）；成立「跨專業醫學教育暨醫品病安研究團隊」（執行7案研究，發表論文）；推動「敘事醫學與哲學對話工作坊」（舉辦7次工作坊，培訓種子教師）；發展「藝術與醫療跨域共融活動」（參與人次比例40%）；發展A+臨床模擬病安教育創新教案平台（開發9套教案，建立題庫）。<br>
+                                        年度重要查核點: 6套醫學人文課程納入必修, 500人次完成培訓, 發表3篇SCI論文, 培訓20名種子教師, 9套A+教案形成標準化課程, 病安通報正確率提升20%。</li>
+                                    <li><b>117年</b>：創建「醫學人文素養培育計畫」（開發8套課程模組，建立認證制度）；成立「跨專業醫學教育暨醫品病安研究團隊」（執行9案研究，國際合作）；推動「敘事醫學與哲學對話工作坊」（舉辦9次工作坊，對外推廣）；發展「藝術與醫療跨域共融活動」（參與人次比例55%）；發展A+臨床模擬病安教育創新教案平台（開發12套教案，AI整合）。<br>
+                                        年度重要查核點: 醫學人文成為品牌課程, 1000人次取得認證, 發表5篇國際論文, 培訓 50名認證講師, 12套A+教案獲醫策會採用, 病安文化正向率達85%。</li>
+                                    <li><b>118年</b>：創建「醫學人文素養培育計畫」（10套課程模組，國際推廣）；成立「跨專業醫學教育暨醫品病安研究團隊」（12案研究，引領亞洲）；推動「敘事醫學與哲學對話工作坊」（12次工作坊，建立學派）；發展「藝術與醫療跨域共融活動」（參與人次比例70%）；發展A+臨床模擬病安教育創新教案平台（15套教案，國際標準）。<br>
+                                        年度重要查核點: 醫學人文獲官方認可, 發表10篇國際論文, XXX名國際認證講師, A+教案成為亞太標準, 病安文化正向率達90%, 重大病安事件<2。</li>
                                 </ul>
                             </div>
                         </li>
@@ -267,7 +312,7 @@
                 </div>
                 <div class="lg:col-span-3 bg-white p-6 rounded-xl shadow-lg">
                     <h3 class="font-bold text-xl mb-4 text-center text-teal-800">關鍵成果指標 (五年計畫)</h3>
-                     <div class="chart-container mx-auto max-w-xl">
+                       <div class="chart-container mx-auto max-w-xl">
                         <canvas id="objective1Chart"></canvas>
                     </div>
                     <div class="mt-8 text-center text-gray-600">
@@ -284,67 +329,95 @@
             <p class="text-lg text-gray-600 mb-8 max-w-4xl">本目標旨在打破專業藩籬，營造跨領域協作的學習環境，讓不同科別、不同職類的醫事人員共同交流學習。透過跨團隊合作與知識分享，培養醫療人員的系統思維與溝通協作能力，提高醫療團隊整體的綜合實力。同時引入其他領域的新知，打造具備多元視野的醫療人才。</p>
             <div class="grid lg:grid-cols-5 gap-8">
                 <div class="lg:col-span-2 bg-white p-6 rounded-xl shadow-lg">
-                     <h3 class="font-bold text-xl mb-4 text-teal-800">核心策略與執行步驟</h3>
+                       <h3 class="font-bold text-xl mb-4 text-teal-800">核心策略與執行步驟</h3>
                     <ul class="space-y-4">
                         <li>
                             <div class="strategy-header font-semibold text-gray-800 text-lg mb-2" data-target="strategy2-1">
-                                落實跨專業教育（IPE）與團隊合作培訓
+                                02-1 跨專業教育：落實跨專業教育（IPE）與團隊合作培訓
                                 <span class="text-xl transform transition-transform duration-300">›</span>
                             </div>
                             <div id="strategy2-1" class="strategy-details text-gray-500 text-sm">
                                 <p>將跨專業教育理念融入院內訓練課程，定期舉辦模擬情境演練、團隊工作坊，增進彼此了解與協作。培訓內容強調團隊溝通、決策協調及角色分工，培養團隊照護模式所需之技能與態度。</p>
                                 <p class="mt-2 font-medium">主要執行步驟：</p>
                                 <ul class="list-disc list-inside ml-4">
-                                    <li><b>116年</b>：推行跨專業教育(IPE)，定期舉辦醫師、護理、藥事、醫技等多職類共同參與的模擬演練與案例討論。</li>
-                                    <li><b>117年</b>：成立跨專業醫學教育暨醫品病安研究團隊。</li>
+                                    <li><b>114年</b>：定期舉辦多職類模擬演練與案例討論（完成演練規劃）；成立跨專業醫學教育研究團隊（團隊成立並啟動1案研究）；發行定期跨專業教育電子報（完成電子報規劃）。<br>
+                                        年度重要查核點: 跨專業醫學教育研究團隊成立, 啟動1案先導研究, 完成IPE模擬演練規劃書。</li>
+                                    <li><b>115年</b>：定期舉辦多職類模擬演練與案例討論（舉辦2次大型演練）；成立跨專業醫學教育研究團隊（執行4案研究，發表2篇論文）；發行定期跨專業教育電子報（正式發行，維持兩週一期）。<br>
+                                        年度重要查核點: 完成2次跨職類模擬演練共200人參與, 4案研究執行中並有2篇論文發表, 電子報發行24期且同仁投稿率達15%。</li>
+                                    <li><b>116年</b>：定期舉辦多職類模擬演練與案例討論（舉辦3次大型演練）；成立跨專業醫學教育研究團隊（執行6案研究，國際發表）；發行定期跨專業教育電子報（持續發行，同仁投稿率提升）。<br>
+                                        年度重要查核點: 3次跨職類演練共500人參與, 完成跨專業合作能力前後測, 6案研究產出並有1篇國際期刊發表, 電子報同仁投稿率達25%。</li>
+                                    <li><b>117年</b>：定期舉辦多職類模擬演練與案例討論（舉辦4次大型演練）；成立跨專業醫學教育研究團隊（執行6案研究，主導全國研究）；發行定期跨專業教育電子報（成為專業期刊等級）。<br>
+                                        年度重要查核點: 4次演練共800人參與並建立能力認證機制, 6案研究獲科技部補助, 電子報升級為專業期刊(ISSN申請), 同仁投稿率達40%, 對外發行500份。</li>
+                                    <li><b>118年</b>：定期舉辦多職類模擬演練與案例討論（舉辦5次國際級演練）；成立跨專業醫學教育研究團隊（持續6案研究，建立IPE理論）；發行定期跨專業教育電子報（成為SCI收錄期刊）。<br>
+                                        年度重要查核點: 5次演練含2次國際演練(XXX人參與), 建立IPE能力國際認證, 研究團隊獲國際獎項, 期刊獲SCI收錄(IF>2), 成為國內IPE中心。</li>
                                 </ul>
                             </div>
                         </li>
                         <li>
                             <div class="strategy-header font-semibold text-gray-800 text-lg mb-2" data-target="strategy2-2">
-                                整合院內共同課程與跨域學習模組
+                                02-2 整合課程：整合院內共同課程與跨域學習模組
                                 <span class="text-xl transform transition-transform duration-300">›</span>
                             </div>
                             <div id="strategy2-2" class="strategy-details text-gray-500 text-sm">
                                 <p>開發並整合全院適用的共同課程，打造跨職類個人化學習選課系統（Individual Learning Portfolio, ILP），促進不同部門人員在課堂中互動交流，培養多元合作風氣。</p>
                                 <p class="mt-2 font-medium">主要執行步驟：</p>
                                 <ul class="list-disc list-inside ml-4">
-                                    <li>建置個人化學習選課系統(ILP)，鼓勵選修其他領域課程。</li>
-                                    <li>制定跨域課程修習獎勵，例如完成特定跨域學習模組可獲得學分證明。</li>
-                                    <li>每年評估跨領域課程的選修人數與滿意度，持續調整課程供給。</li>
+                                    <li><b>114年</b>：建置個人化學習選課系統(ILP)（完成系統需求分析）；整合課程，提供跨職類智能選修課程媒合平台（完成概念設計）；制定跨域課程修習獎勵（完成獎勵辦法草案）。<br>
+                                        年度重要查核點: 完成ILP系統需求分析報告, 產出智能選修平台概念設計, 制定跨域課程獎勵辦法草案。</li>
+                                    <li><b>115年</b>：建置個人化學習選課系統(ILP)（系統建置50%，開始試用）；整合課程，提供跨職類智能選修課程媒合平台（平台建置50%）；制定跨域課程修習獎勵（獎勵制度實施，使用率40%）。<br>
+                                        年度重要查核點: ILP系統 beta版上線試用, 100名種子使用者, 智能媒合平台完成核心算法, 跨域課程獎勵發放50人次, 整合20門跨職類課程。</li>
+                                    <li><b>116年</b>：建置個人化學習選課系統(ILP)（系統建置65%，功能優化）；整合課程，提供跨職類智能選修課程媒合平台（平台建置70%，AI推薦上線）；制定跨域課程修習獎勵（獎勵制度擴大，使用率60%）；透過評估與分析跨領域課程選修人數與滿意度（建立評估機制）。<br>
+                                        年度重要查核點: ILP系統正式版上線, 500名活躍使用者, AI課程推薦準確率80%, 整合50門跨職類課程, 跨域選修滿意度85%, 完成首份成效評估報告。</li>
+                                    <li><b>117年</b>：建置個人化學習選課系統(ILP)（系統建置80%，預測功能上線）；整合課程，提供跨職類智能選修課程媒合平台（平台建置85%，區域共享）；制定跨域課程修習獎勵（獎勵制度完善，使用率75%）；透過評估與分析跨領域課程選修人數與滿意度（建立品質保證機制）。<br>
+                                        年度重要查核點: ILP系統1000名活躍使用者, AI推薦採納率85%, 整合80門跨職類課程, 3家區域醫院加入共享, 跨域選修滿意度90%, 獲SNQ國家品質標章。</li>
+                                    <li><b>118年</b>：建置個人化學習選課系統(ILP)（系統90%完成，自主優化）；整合課程，提供跨職類智能選修課程媒合平台（平台95%完成，全國共享）；制定跨域課程修習獎勵（獎勵永續基金，使用率85%）；透過評估與分析跨領域課程選修人數與滿意度（AI自動優化）。<br>
+                                        年度重要查核點: ILP系統XXX名活躍使用者(含XXX名院外), AI推薦採納率92%, 整合XXX門課程, XX家醫院加入聯盟, 滿意度95%, 獲國際醫學教育協會認證。</li>
                                     <li>推動醫學教育與醫品病安的課程整合。</li>
                                 </ul>
                             </div>
                         </li>
                         <li>
                             <div class="strategy-header font-semibold text-gray-800 text-lg mb-2" data-target="strategy2-3">
-                                推動跨部門協作專案與交流論壇
+                                02-3 跨部門協作：推動跨部門協作專案與交流論壇
                                 <span class="text-xl transform transition-transform duration-300">›</span>
                             </div>
                             <div id="strategy2-3" class="strategy-details text-gray-500 text-sm">
                                 <p>鼓勵醫事人員參與跨部門或跨院的協作專案，以實際問題為導向組成多專業團隊，共同研議創新解決方案。同時定期舉辦跨領域交流論壇，刺激醫事人員的創意思維。</p>
                                 <p class="mt-2 font-medium">主要執行步驟：</p>
                                 <ul class="list-disc list-inside ml-4">
-                                    <li><b>116年</b>：建立院內跨部門共學社群或專案團隊，針對臨床議題展開協作研討。</li>
-                                    <li><b>117年</b>：舉辦跨領域健康創新論壇（擴大「Chi Mei Talk」規模），邀請醫療、科技、公共衛生等領域專家與員工對話。設立創新專案競賽或補助，鼓勵醫護與資訊、工程等不同背景人員組隊提出醫療創新計畫。</li>
+                                    <li><b>114年</b>：建立跨部門共學社群或專案團隊（完成社群規劃）；建立跨職類PGY團隊照護病房（完成可行性評估）；舉辦跨領域創新多元發展論壇（規劃Chi Mei Talk架構，並舉辦一場）。<br>
+                                        年度重要查核點: 完成跨部門共學社群規劃書, PGY團隊照護病房可行性評估報告, 確定 Chi Mei Talk 舉辦一場。</li>
+                                    <li><b>115年</b>：建立跨部門共學社群或專案團隊（社群成立40%，3個社群運作）；建立跨職類PGY團隊照護病房（完成詳細規劃，準備試行）；舉辦跨領域健康創新論壇（舉辦1次Chi Mei Talk）；與院校及醫療團體合作跨領域工作坊與人才交流（啟動1次合作）。<br>
+                                        年度重要查核點: 3個跨部門共學社群穩定運作, PGY團隊照護病房完成空間規劃與人員配置, 成功舉辦1次 Chi Mei Talk(200人參與), 完成1次院校合作工作坊。</li>
+                                    <li><b>116年</b>：建立跨部門共學社群或專案團隊（社群運作60%，6個社群活躍）；建立跨職類PGY團隊照護病房（正式成立並持續運作）；舉辦跨領域健康創新論壇（舉辦2次Chi Mei Talk）；與院校及醫療團體合作跨領域工作坊與人才交流（完成2次合作）。<br>
+                                        年度重要查核點: 6個跨部門社群產出10個創新專案, PGY團隊病房收治100床病人並完成成效評估, 2次Chi Mei Talk 共600人參與, 2次院校合作培訓50人。</li>
+                                    <li><b>117年</b>：建立跨部門共學社群或專案團隊（社群運作75%，10個社群產出成果）；建立跨職類PGY團隊照護病房（持續運作，成為教學示範中心）；舉辦跨領域創新多元論壇（舉辦2次大型論壇）；與院校及醫療團體合作跨領域工作坊與人才交流（完成3次深度合作）。<br>
+                                        年度重要查核點: 10個社群產出20個創新專案(3個獲國家創新獎), PGY團隊病房成為全國示範點, 2次論壇共1000人參與, 3次合作培訓100人並簽訂長期合作協議。</li>
+                                    <li><b>118年</b>：建立跨部門共學社群或專案團隊（社群運作90%，15個社群永續發展）；建立跨職類PGY團隊照護病房（成為國家示範中心）；舉辦跨領域創新多元論壇（舉辦3次國際論壇）；與院校及醫療團體合作跨領域工作坊與人才交流（4次國際合作）。<br>
+                                        年度重要查核點: 15個社群產出30個創新專案(10個商品化), PGY模式推廣XX家醫院, 3次國際論壇共XXX人參與, 4次國際合作, 建立亞太醫學教育聯盟。</li>
                                     <li><b>115年</b>：師培中心參加院內年度品質改善活動，全台第一個師培中心成立QCC。</li>
-                                    <li><b>116年</b>：與大專院校及醫療團體合作辦理跨領域工作坊或人才交流計畫。</li>
-                                    <li><b>117年</b>：與區域聯盟醫院及國際醫療中心建立合作培訓計畫，選派醫事人員赴外研習並接待交流。</li>
                                 </ul>
                             </div>
                         </li>
-                         <li>
+                           <li>
                             <div class="strategy-header font-semibold text-gray-800 text-lg mb-2" data-target="strategy2-4">
-                                強化數位及管理素養跨域培育
+                                02-4 數位管理跨域：強化數位及管理素養跨域培育
                                 <span class="text-xl transform transition-transform duration-300">›</span>
                             </div>
                             <div id="strategy2-4" class="strategy-details text-gray-500 text-sm">
                                 <p>結合智慧醫療推動，鼓勵醫事人員參與數位轉型相關的跨域專案與訓練，提升數位素養與創新能力。</p>
                                 <p class="mt-2 font-medium">主要執行步驟：</p>
                                 <ul class="list-disc list-inside ml-4">
-                                    <li><b>115年</b>：擴大AI輔導，針對不同專業推出進階AI學習顧問服務。</li>
-                                    <li><b>116年</b>：由醫院教學中心牽頭組成跨部門數位轉型工作小組，招募對AI、資訊有興趣的臨床人員參與，共同推動院內數位創新專案。</li>
-                                    <li><b>117年</b>：成立AI Everywhere小組，及教學中心參加QCC來加速全機構數位賦能的滲透率。</li>
+                                    <li><b>114年</b>：跨部門數位轉型工作小組成立與運作（完成籌備）；提供數位與管理素養相關培訓（完成課程規劃）。<br>
+                                        年度重要查核點: 完成數位轉型工作小組籌備, 產出數位與管理素養培訓課程大綱, 確定培訓講師名單。</li>
+                                    <li><b>115年</b>：跨部門數位轉型工作小組成立與運作（小組正式成立並定期運作）；提供數位與管理素養相關培訓（完成40%員工培訓）；建立數位賦能教育中心（中心建置60%，開始提供服務）。<br>
+                                        年度重要查核點: 數位轉型工作小組每月召開會議, 完成3個數位轉型專案, 40%員工取得數位素養認證, 數位賦能教育中心提供10門常態課程。</li>
+                                    <li><b>116年</b>：跨部門數位轉型工作小組成立與運作（持續運作，推動全院專案）；提供數位與管理素養相關培訓（完成60%員工培訓）；建立數位賦能教育中心（中心建置80%，區域服務啟動）。<br>
+                                        年度重要查核點: 完成5個全院性數位轉型專案, 60%員工取得進階數位認證, 數位賦能教育中心提供20門課程, 開始接受院外機構委訓。</li>
+                                    <li><b>117年</b>：跨部門數位轉型工作小組成立與運作（成為常設組織，主導醫院數位政策）；提供數位與管理素養相關培訓（完成75%員工培訓）；建立數位賦能教育中心（中心建置95%，成為區域培訓中心）。<br>
+                                        年度重要查核點: 完成10個醫院數位轉型專案, 75%員工取得國際數位認證, 教育中心提供30門認證課程, 培訓院外學員200人, 成為Google 醫療數位轉型示範點。</li>
+                                    <li><b>118年</b>：跨部門數位轉型工作小組成立與運作（成為醫院核心決策單位）；提供數位與管理素養相關培訓（90%員工完成培訓）；建立數位賦能教育中心（中心100%完成，國家培訓基地）。<br>
+                                        年度重要查核點: 主導XX個國家級數位轉型專案, XX%員工獲國際認證(含XX名講師), 教育中心年培訓 XXX人次, 獲選為國家數位人才培育示範中心。</li>
                                     <li>制定人才輪調計畫，每年選派一定名額的臨床人員至資訊、管理等部門短期學習，反之亦安排行政人員至臨床單位見習。</li>
                                     <li>針對語言能力，加強醫事人員英語溝通課程，以利吸收國際新知及參與國際交流。</li>
                                 </ul>
@@ -355,12 +428,12 @@
                 <div class="lg:col-span-3 bg-white p-6 rounded-xl shadow-lg">
                     <h3 class="font-bold text-xl mb-4 text-center text-teal-800">關鍵成果指標</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                         <div class="chart-container mx-auto max-w-md">
-                            <canvas id="objective2Chart1"></canvas>
-                        </div>
-                        <div class="chart-container mx-auto max-w-md">
-                            <canvas id="objective2Chart2"></canvas>
-                        </div>
+                           <div class="chart-container mx-auto max-w-md">
+                                <canvas id="objective2Chart1"></canvas>
+                            </div>
+                            <div class="chart-container mx-auto max-w-md">
+                                <canvas id="objective2Chart2"></canvas>
+                            </div>
                     </div>
                     <div class="mt-8 text-center text-gray-600">
                         <p class="font-semibold mb-2">預期成效說明：</p>
@@ -374,69 +447,117 @@
         <section id="objective3" class="content-section">
             <h2 class="text-3xl font-bold mb-2 text-slate-900">目標四：建立明確職涯發展路徑</h2>
             <p class="text-lg text-gray-600 mb-8 max-w-4xl">本目標旨在透過制度化的職涯規劃與能力評估機制，為醫事人員打造清晰的職涯發展藍圖。以勝任力本位醫學教育（CBME）為核心，設定各職級所需達成的核心能力與可委託專業活動（EPA）里程碑，並結合數位工具紀錄個人成長，增進人員投入自我發展的動機，培育可持續的醫療人才梯隊。</p>
-             <div class="grid lg:grid-cols-5 gap-8">
+               <div class="grid lg:grid-cols-5 gap-8">
                 <div class="lg:col-span-2 bg-white p-6 rounded-xl shadow-lg">
-                     <h3 class="font-bold text-xl mb-4 text-teal-800">核心策略與執行步驟</h3>
+                       <h3 class="font-bold text-xl mb-4 text-teal-800">核心策略與執行步驟</h3>
                     <ul class="space-y-4">
                         <li>
                             <div class="strategy-header font-semibold text-gray-800 text-lg mb-2" data-target="strategy3-1">
-                                全面導入CBME/EPA里程碑評估制度
+                                04-1 智能職涯規劃：導入智慧化職涯導覽平台
                                 <span class="text-xl transform transition-transform duration-300">›</span>
                             </div>
                             <div id="strategy3-1" class="strategy-details text-gray-500 text-sm">
                                 <p>成立臨床能力評估委員會，負責規劃並推動以能力為導向的評估制度。釐清不同階段的核心勝任力清單，制定對應的EPA里程碑，明確定義每個階段需要掌握的技能與責任範疇。</p>
                                 <p class="mt-2 font-medium">主要執行步驟：</p>
                                 <ul class="list-disc list-inside ml-4">
-                                    <li><b>114年</b>：成立臨床能力評估委員會，確認評估工具。</li>
-                                    <li><b>115年</b>：將CBME/EPA評估模式擴大至全院主要科別與職能訓練項目，定期施行能力評估。</li>
-                                    <li><b>116年</b>：完成各主要職系職涯發展藍圖與晉升階梯設計，明確不同階段勝任力與職位要求。</li>
-                                    <li>推行EPA與Milestone評估培訓。</li>
-                                    <li>發展臨床能力年度追蹤指標，納入奇美特色指標，例如：AI、醫品與病安、藝術人文。</li>
+                                    <li><b>114年</b>：建置智能職涯導覽系統（完成系統需求分析）；開發職涯發展數位檔案系統（完成系統規劃）；推廣智慧e-Portfolio系統使用（完成推廣計畫）。<br>
+                                        年度重要查核點: 完成智能職涯導覽系統需求分析, 產出數位檔案系統規劃書, 制定e-Portfolio推廣計畫。</li>
+                                    <li><b>115年</b>：建置智能職涯導覽系統（系統開發70%，部分功能上線）；開發職涯發展數位檔案系統（系統建置60%，開始試用）；推廣智慧e-Portfolio系統使用（使用人數達50%）；推廣職涯情境模擬工具（工具開發50%，100人試用）。<br>
+                                        年度重要查核點: 智能職涯導覽系統核心功能上線, 500人建立數位檔案, e-Portfolio 月活躍率30%, 職涯模擬工具完成3種情境開發。</li>
+                                    <li><b>116年</b>：建置智能職涯導覽系統（系統開發85%，主要功能完備）；開發職涯發展數位檔案系統（系統建置80%，全面使用）；推廣智慧e-Portfolio系統使用（使用人數達70%）；推廣職涯情境模擬工具（工具完善，使用率70%）。<br>
+                                        年度重要查核點: 智能導覽系統整合AI推薦引擎, 1000人建立完整數位檔案, e-Portfolio 月活躍率50%, 職涯模擬工具完成10種情境, 使用者滿意度85%。</li>
+                                    <li><b>117年</b>：建置智能職涯導覽系統（系統開發95%，預測分析功能完備）；開發職涯發展數位檔案系統（系統建置90%，區塊鏈認證）；推廣智慧e-Portfolio系統使用（使用人數達85%）；推廣職涯情境模擬工具（工具成熟，使用率85%）。<br>
+                                        年度重要查核點: 智能系統預測職涯發展準確率85%, 1500人建立區塊鏈認證檔案, e-Portfolio 成為升遷必要條件, 職涯模擬工具開發20種情境, 對外授權3家醫院使用。</li>
+                                    <li><b>118年</b>：建置智能職涯導覽系統（系統100%完成，全球領先）；開發職涯發展數位檔案系統（系統100%完成，國際互認）；推廣智慧e-Portfolio系統使用（使用人數達95%）；推廣職涯情境模擬工具（工具完善，使用率95%）。<br>
+                                        年度重要查核點: 系統獲國際ISO認證, XXX人建立國際互認檔案, e-Portfolio 成為臺灣標竿, 職涯模擬30種情境(VR/AR整合), 授權XX家醫院使用。</li>
                                 </ul>
                             </div>
                         </li>
                         <li>
                             <div class="strategy-header font-semibold text-gray-800 text-lg mb-2" data-target="strategy3-2">
-                                建置個人化職涯發展檔案（e-Portfolio）
+                                04-2 人才循環系統：建立次世代人才循環管理制度
                                 <span class="text-xl transform transition-transform duration-300">›</span>
                             </div>
                             <div id="strategy3-2" class="strategy-details text-gray-500 text-sm">
                                 <p>開發智慧型職涯與學習歷程檔案系統，記錄每位醫事人員的學習成果、技能評估、證照資格等資訊。運用區塊鏈或其他安全技術確保紀錄不可篡改且終身可追溯，方便人員隨時查詢自身里程碑達成進度。</p>
                                 <p class="mt-2 font-medium">主要執行步驟：</p>
                                 <ul class="list-disc list-inside ml-4">
-                                    <li><b>114年</b>：建置智慧型臨床能力評估平台(A+E-portfolio)，設計區塊鏈紀錄個人學習歷程。</li>
-                                    <li><b>115年</b>：將員工能力達成與職涯晉升緊密結合。</li>
-                                    <li><b>116年</b>：完成各主要職系職涯發展藍圖與晉升階梯設計，明確不同階段勝任力與職位要求。</li>
+                                    <li><b>114年</b>：建置人才循環管理系統（完成制度設計）；實施跨職能輪調與雙軌職涯計畫（完成計畫設計）。<br>
+                                        年度重要查核點: 完成人才循環管理制度設計, 產出跨職能輪調計畫書, 確定試行部門。</li>
+                                    <li><b>115年</b>：建置人才循環管理系統（系統建置60%，試行運作）；實施跨職能輪調與雙軌職涯計畫（35%員工參與輪調）。<br>
+                                        年度重要查核點: 人才循環系統完成主要模組開發, 50人完成跨職能輪調, 建立5條雙軌職涯路徑, 產出輪調成效評估報告。</li>
+                                    <li><b>116年</b>：建置人才循環管理系統（系統建置80%，功能完善）；實施跨職能輪調與雙軌職涯計畫（55%員工參與輪調）。<br>
+                                        年度重要查核點: 人才循環系統全面運作, 150人完成輪調並有80%正向回饋, 建立10條雙軌職涯路徑, 3名員工成功轉換職涯跑道。</li>
+                                    <li><b>117年</b>：建置人才循環管理系統（系統建置95%，智慧媒合功能）；實施跨職能輪調與雙軌職涯計畫（75%員工參與輪調）。<br>
+                                        年度重要查核點: 系統智慧媒合成功率80%, 300人完成輪調(滿意度85%), 15條雙軌職涯路徑, 10名員工成功轉型, 發表人才循環模式白皮書。</li>
+                                    <li><b>118年</b>：建置人才循環管理系統（系統100%完成，自主最適化）；實施跨職能輪調與雙軌職涯計畫（90%員工經歷輪調）。<br>
+                                        年度重要查核點: 系統AI最適化配置準確率90%, 累計XXX人完成輪調(滿意度90%), 20條職涯路徑, XX名成功轉型典範, 模式獲哈佛商業評論案例。</li>
                                 </ul>
                             </div>
                         </li>
                         <li>
                             <div class="strategy-header font-semibold text-gray-800 text-lg mb-2" data-target="strategy3-3">
-                                導入AI導師（AI Coach）輔導機制
+                                04-3 動態能力評估：導入即時動態能力分析系統
                                 <span class="text-xl transform transition-transform duration-300">›</span>
                             </div>
                             <div id="strategy3-3" class="strategy-details text-gray-500 text-sm">
                                 <p>運用人工智慧技術建立AI線上學習導師系統，為醫事人員提供個性化的職涯輔導。AI導師可根據e-Portfolio中的數據，主動分析個人學習曲線與能力缺口，推薦適合的進修課程或訓練機會，並及時給予反饋。</p>
                                 <p class="mt-2 font-medium">主要執行步驟：</p>
                                 <ul class="list-disc list-inside ml-4">
-                                    <li><b>114年</b>：引進AI智慧學習教練試點，提供個人化學習建議與輔導。</li>
-                                    <li><b>115年</b>：擴大AI輔導，針對不同專業推出進階AI學習顧問服務。</li>
-                                    <li><b>115年</b>：針對不同專業推出進階AI學習顧問服務。</li>
+                                    <li><b>114年</b>：開發即時動態能力分析工具（完成工具設計）；定期三個月進行動態能力評估回饋（完成評估架構）。<br>
+                                        年度重要查核點: 完成動態能力分析工具概念設計, 建立能力評估指標架構, 確定評估流程。</li>
+                                    <li><b>115年</b>：開發即時動態能力分析工具（系統開發55%，開始測試）；定期三個月進行動態能力評估回饋（50%員工接受評估）。<br>
+                                        年度重要查核點: 動態能力分析工具完成資料收集模組, 50%員工完成2次能力評估, 建立能力成長曲線基準, 產出首份能力發展報告。</li>
+                                    <li><b>116年</b>：開發即時動態能力分析工具（系統開發75%，即時分析上線）；定期三個月進行動態能力評估回饋（70%員工接受評估）。<br>
+                                        年度重要查核點: 動態分析工具提供即時能力儀表板, 70%員工完成4次評估, 建立能力發展預測模型, 準確率達75%, 產出個人化發展建議1000份。</li>
+                                    <li><b>117年</b>：開發即時動態能力分析工具（系統開發90%，預警功能上線）；定期三個月進行動態能力評估回饋（85%員工接受評估）。<br>
+                                        年度重要查核點: 系統提供能力缺口預警(準確率80%), 85%員工完成6次評估, AI生成2000份個人化發展計畫, 能力提升率較基準線成長30%。</li>
+                                    <li><b>118年</b>：開發即時動態能力分析工具（系統100%完成，預測精準）；定期三個月進行動態能力評估回饋（95%員工持續評估）。<br>
+                                        年度重要查核點: 系統預測準確率達90%, 95%員工完成8次評估, AI生成XXX份精準發展計畫, 整體能力提升50%, 系統獲XXX人資科技創新獎。</li>
                                 </ul>
                             </div>
                         </li>
-                         <li>
+                           <li>
                             <div class="strategy-header font-semibold text-gray-800 text-lg mb-2" data-target="strategy3-4">
-                                建立職涯發展諮詢與輪調制度
+                                04-4 智慧輔導：導入AI導師（AI Coach）輔導機制
                                 <span class="text-xl transform transition-transform duration-300">›</span>
                             </div>
                             <div id="strategy3-4" class="strategy-details text-gray-500 text-sm">
                                 <p>設立職涯發展諮詢服務，由專責人員或資深員工擔任職涯顧問，提供一對一諮詢協助員工規劃生涯。推行職務輪調計畫，拓展專業視野並發掘興趣專長，塑造彈性多元的職涯道路。</p>
                                 <p class="mt-2 font-medium">主要執行步驟：</p>
                                 <ul class="list-disc list-inside ml-4">
-                                    <li><b>115年</b>：實施導師/師徒計畫，資深員工指導後進制定個人發展計畫(IDP)，定期追蹤進度。</li>
-                                    <li><b>116年</b>：設立職涯發展諮詢窗口，定期提供員工一對一職涯輔導，協助規劃輪調與進修方向；每年舉辦職涯發展主題講座或工作坊。</li>
-                                    <li><b>117年</b>：建立接班人計畫與人才庫，針對核心關鍵職位制定培養接班梯隊。提供臨床、教學、研究、行政等多元發展通道，鼓勵員工按志趣在不同領域橫向輪調發展。</li>
+                                    <li><b>114年</b>：AI導師系統建置與導入（完成系統規劃）；提供AI輔導服務培訓（完成培訓規劃）。<br>
+                                        年度重要查核點: 完成AI導師系統功能規劃書, 確定系統架構, 制定輔導服務培訓計畫。</li>
+                                    <li><b>115年</b>：AI導師系統建置與導入（系統建置55%，功能測試）；提供AI輔導服務培訓（培訓45%員工）。<br>
+                                        年度重要查核點: AI導師完成對話引擎開發, 建立100個輔導情境, 45%員工完成AI輔導體驗, 收集1000筆互動數據優化系統。</li>
+                                    <li><b>116年</b>：AI導師系統建置與導入（系統建置75%，功能成熟）；提供AI輔導服務培訓（培訓65%員工）。<br>
+                                        年度重要查核點: AI導師完成自然語言處理優化, 建立500個輔導情境, 提供24/7輔導服務, 65%員工定期使用, 收集10000筆互動數據, 滿意度80%。</li>
+                                    <li><b>117年</b>：AI導師系統建置與導入（系統建置90%，情緒辨識功能）；提供AI輔導服務培訓（培訓80%員工）。<br>
+                                        年度重要查核點: AI導師具備情緒辨識與壓力預警功能, 1000個輔導情境, 80%員工每月至少使用1次, 累積50000筆數據, 員工職涯焦慮指數下降25%。</li>
+                                    <li><b>118年</b>：AI導師系統建置與導入（系統100%完成，情感運算成熟）；提供AI輔導服務培訓（90%員工精通使用）。<br>
+                                        年度重要查核點: AI導師具備完整情感運算與心理輔導功能, XXX個情境庫, 90%員工每週使用, 累積XXX筆數據, 員工幸福感指數達85分, 獲國際AI應用獎。</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="strategy-header font-semibold text-gray-800 text-lg mb-2" data-target="strategy3-5">
+                                04-5 參與式職涯設計：建立員工共同參與職涯發展路徑機制
+                                <span class="text-xl transform transition-transform duration-300">›</span>
+                            </div>
+                            <div id="strategy3-5" class="strategy-details text-gray-500 text-sm">
+                                <p>成立員工職涯設計工作坊，推廣職涯教練與同儕互助計畫，提升員工職涯滿意度並降低離職率。</p>
+                                <p class="mt-2 font-medium">主要執行步驟：</p>
+                                <ul class="list-disc list-inside ml-4">
+                                    <li><b>114年</b>：成立員工職涯設計工作坊（完成工作坊設計）；推廣職涯教練與同儕互助計畫（完成計畫設計）。<br>
+                                        年度重要查核點: 完成職涯設計工作坊課程設計, 制定職涯教練培訓計畫, 建立同儕互助機制架構。</li>
+                                    <li><b>115年</b>：成立員工職涯設計工作坊（舉辦4場，參與率40%）；推廣職涯教練與同儕互助計畫（35%員工參與）。<br>
+                                        年度重要查核點: 完成4場職涯設計工作坊共300人參與, 培訓20名內部職涯教練, 建立10個同儕互助小組, 職涯滿意度提升15%。</li>
+                                    <li><b>116年</b>：成立員工職涯設計工作坊（舉辦6場，參與率60%）；推廣職涯教練與同儕互助計畫（55%員工參與）。<br>
+                                        年度重要查核點: 6場工作坊共600人參與, 培訓40名認證職涯教練, 建立20個同儕互助小組, 員工職涯滿意度達75%, 離職率降低10%。</li>
+                                    <li><b>117年</b>：成立員工職涯設計工作坊（舉辦8場，參與率80%）；推廣職涯教練與同儕互助計畫（75%員工參與）。<br>
+                                        年度重要查核點: 8場工作坊共1000人參與, 60名國際認證職涯教練, 30個活躍互助小組, 職涯滿意度達80%, 離職率降低10%。</li>
+                                    <li><b>118年</b>：成立員工職涯設計工作坊（舉辦12場，參與率95%）；推廣職涯教練與同儕互助計畫（90%員工參與）。<br>
+                                        年度重要查核點: 12場工作坊共XXX人參與, XXX名國際認證職涯教練, XX個永續互助社群, 職涯滿意度90%, 離職率<5%, 獲最佳雇主品牌獎。</li>
                                 </ul>
                             </div>
                         </li>
@@ -445,12 +566,12 @@
                 <div class="lg:col-span-3 bg-white p-6 rounded-xl shadow-lg">
                     <h3 class="font-bold text-xl mb-4 text-center text-teal-800">關鍵成果指標</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                         <div class="chart-container mx-auto max-w-md">
-                            <canvas id="objective3Chart1"></canvas>
-                        </div>
-                        <div class="chart-container mx-auto max-w-md">
-                            <canvas id="objective3Chart2"></canvas>
-                        </div>
+                           <div class="chart-container mx-auto max-w-md">
+                                <canvas id="objective3Chart1"></canvas>
+                            </div>
+                            <div class="chart-container mx-auto max-w-md">
+                                <canvas id="objective3Chart2"></canvas>
+                            </div>
                     </div>
                     <div class="mt-8 text-center text-gray-600">
                         <p class="font-semibold mb-2">預期成效說明：</p>
@@ -462,7 +583,7 @@
         </section>
 
         <section id="assessment" class="content-section">
-             <h2 class="text-3xl font-bold mb-2 text-slate-900">總體效益評估</h2>
+               <h2 class="text-3xl font-bold mb-2 text-slate-900">總體效益評估</h2>
             <p class="text-lg text-gray-600 mb-8 max-w-4xl">本計畫透過各項核心策略的推行，預期將帶來明確且可衡量的效益，全面提升人才培育質量與組織人力發展的永續性。</p>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
                 <div class="bg-white p-6 rounded-xl shadow-lg">
@@ -485,7 +606,7 @@
                     <p class="font-semibold text-gray-700 mt-2">住院醫師考核通過率</p>
                     <p class="text-gray-500 text-sm">透過CBME/EPA的推行與充實的訓練，醫事人員整體專業能力顯著提升。各項專業考核通過率均有改善，例如住院醫師結業考核一次通過率達到98%，較計畫前提升5個百分點。</p>
                 </div>
-                 <div class="col-span-2 md:col-span-4 bg-white p-6 rounded-xl shadow-lg mt-6">
+                   <div class="col-span-2 md:col-span-4 bg-white p-6 rounded-xl shadow-lg mt-6">
                     <h3 class="font-bold text-xl mb-4 text-center text-teal-800">組織人力發展永續性</h3>
                     <p class="text-gray-600 text-sm text-center">
                         綜合以上成果，醫院將形成良性的人才發展生態系統。人員留任率提升（整體員工留任率提升15%），員工滿意度提升20%，專業能力評量平均分數提升10%。離職率下降，組織關鍵職缺的接續有人才可以補位，降低因人力斷層導致的風險。醫院也因為投入人才培育而獲得醫學中心評鑑相關加分或嘉許，在業界樹立重視人才發展的品牌形象，長遠而言提高醫療服務品質並促進醫療體系永續發展。深耕計劃措施全面納入日常營運（持續執行率100%），後續每年檢討改進至少1次，確保人才培育持續與時俱進。
@@ -581,7 +702,7 @@
                         title: { display: true, text: '團隊協作能力提升', color: chartFontColor, font: { size: 16 } },
                         legend: { display: false }
                     },
-                     scales: {
+                    scales: {
                         x: { 
                             beginAtZero: true,
                             max: 5,
@@ -636,9 +757,9 @@
                     maintainAspectRatio: false,
                     plugins: {
                         title: { display: true, text: '職涯路徑清晰度 (>90%)', color: chartFontColor, font: { size: 16 } },
-                         legend: { position: 'bottom', labels: { color: chartFontColor }}
+                        legend: { position: 'bottom', labels: { color: chartFontColor }}
                     },
-                     cutout: '60%'
+                    cutout: '60%'
                 }
             };
             
@@ -663,7 +784,7 @@
                         legend: { display: false }
                     },
                     scales: {
-                         y: { 
+                        y: { 
                             beginAtZero: true,
                             max: 100,
                             ticks: { color: chartFontColor },
@@ -671,7 +792,7 @@
                         },
                         x: {
                             ticks: { color: chartFontColor,
-                                     font: { size: 10 }
+                                    font: { size: 10 }
                             },
                             grid: { display: false }
                         }
@@ -802,8 +923,9 @@
                     loginError.classList.add('hidden');
                 } else {
                     // Failed login
+                    // For security, avoid giving specific hints like "username or password wrong"
                     loginError.classList.remove('hidden');
-                    document.getElementById('password').value = '';
+                    document.getElementById('password').value = ''; // Clear password field
                 }
             });
 
