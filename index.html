@@ -19,8 +19,8 @@
             transition: color 0.3s, border-bottom-color 0.3s;
         }
         .nav-link.active, .nav-link:hover {
-            color: #0d9488; /* teal-600 */
-            border-bottom-color: #0d9488;
+            color: #2563eb; /* blue-600 */
+            border-bottom-color: #2563eb;
         }
         .chart-container {
             position: relative;
@@ -114,20 +114,20 @@
                 <div>
                     <label for="username" class="block text-sm font-medium text-gray-700 mb-1">使用者ID</label>
                     <input type="text" id="username" name="username" required 
-                           class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
+                           class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                            placeholder="請輸入使用者ID">
                 </div>
                 <div>
                     <label for="password" class="block text-sm font-medium text-gray-700 mb-1">密碼</label>
                     <input type="password" id="password" name="password" required 
-                           class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
+                           class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                            placeholder="請輸入密碼">
                 </div>
                 <div id="loginError" class="text-red-600 text-sm hidden">
                     登入失敗：使用者ID或密碼錯誤
                 </div>
                 <button type="submit" 
-                        class="w-full bg-teal-600 text-white py-2 px-4 rounded-md hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 transition-colors">
+                        class="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors">
                     登入
                 </button>
             </form>
@@ -140,7 +140,7 @@
     <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
         <div class="container mx-auto px-4">
             <nav class="flex items-center justify-between h-20">
-                <h1 class="text-xl md:text-2xl font-bold text-teal-700 cursor-pointer hover:text-teal-800 transition-colors duration-200" onclick="showSection('overview'); setActiveNavLink('overview');">多元人才培訓計劃</h1>
+                <h1 class="text-xl md:text-2xl font-bold text-blue-700 cursor-pointer hover:text-blue-800 transition-colors duration-200" onclick="showSection('overview'); setActiveNavLink('overview');">多元人才培訓計劃</h1>
                 <div class="hidden md:flex items-center space-x-6 lg:space-x-8 overflow-x-auto pb-2 -mb-2">
                     <a href="#overview" class="nav-link text-gray-600 font-medium pb-1 border-b-2 border-transparent active" data-section="overview">總覽</a>
                     <a href="#objective1" class="nav-link text-gray-600 font-medium pb-1 border-b-2 border-transparent" data-section="objective1">持續教育與專業發展</a>
@@ -149,7 +149,7 @@
                     <a href="#assessment" class="nav-link text-gray-600 font-medium pb-1 border-b-2 border-transparent" data-section="assessment">效益評估</a>
                 </div>
                    <div class="md:hidden">
-                    <select id="mobile-nav" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-teal-500 focus:ring-teal-500">
+                    <select id="mobile-nav" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
                         <option value="overview">總覽</option>
                         <option value="objective1">持續教育與專業發展</option>
                         <option value="objective2">跨領域合作與學習</option>
@@ -172,17 +172,17 @@
             <div class="grid md:grid-cols-3 gap-8 text-center mb-12">
                 <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200/80 cursor-pointer hover:shadow-lg hover:scale-105 transition-all duration-300" data-card-target="objective1">
                     <div class="text-5xl mb-3">🎓</div>
-                    <h3 class="text-xl font-semibold mb-2 text-teal-800">目標一：提供持續教育與專業發展機會</h3>
+                    <h3 class="text-xl font-semibold mb-2 text-blue-800">目標一：提供持續教育與專業發展機會</h3>
                     <p class="text-gray-500 text-sm">建立健全的持續教育體系，鼓勵醫事人員終身學習，不斷精進臨床技能與專業素養。</p>
                 </div>
                 <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200/80 cursor-pointer hover:shadow-lg hover:scale-105 transition-all duration-300" data-card-target="objective2">
                     <div class="text-5xl mb-3">🤝</div>
-                    <h3 class="text-xl font-semibold mb-2 text-teal-800">目標二：促進醫事人員跨領域合作與學習</h3>
+                    <h3 class="text-xl font-semibold mb-2 text-blue-800">目標二：促進醫事人員跨領域合作與學習</h3>
                     <p class="text-gray-500 text-sm">打破專業藩籬，營造跨領域協作的學習環境，培養系統思維與溝通協作能力。</p>
                 </div>
                 <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200/80 cursor-pointer hover:shadow-lg hover:scale-105 transition-all duration-300" data-card-target="objective3">
                     <div class="text-5xl mb-3">🚀</div>
-                    <h3 class="text-xl font-semibold mb-2 text-teal-800">目標四：建立明確職涯發展路徑</h3>
+                    <h3 class="text-xl font-semibold mb-2 text-blue-800">目標四：建立明確職涯發展路徑</h3>
                     <p class="text-gray-500 text-sm">透過制度化的職涯規劃與能力評估機制，為醫事人員打造清晰的職涯發展藍圖。</p>
                 </div>
             </div>
@@ -196,7 +196,7 @@
             <p class="text-lg text-gray-600 mb-8 max-w-4xl">本目標旨在建立健全的持續教育體系，鼓勵醫事人員終身學習，不斷精進臨床技能與專業素養。透過導入能力本位醫學教育框架（CBME/EPA）與智慧學習工具，促進自主學習與數位賦能，並提供彈性多元的進修管道，以保持醫療照護水準隨醫療新知不斷提升。</p>
             <div class="grid lg:grid-cols-5 gap-8">
                 <div class="lg:col-span-2 bg-white p-6 rounded-xl shadow-lg">
-                    <h3 class="font-bold text-xl mb-4 text-teal-800">核心策略與執行步驟</h3>
+                    <h3 class="font-bold text-xl mb-4 text-blue-800">核心策略與執行步驟</h3>
                     <ul class="space-y-4">
                         <li>
                             <div class="strategy-header font-semibold text-gray-800 text-lg mb-2" data-target="strategy1-1">
@@ -311,7 +311,7 @@
                     </ul>
                 </div>
                 <div class="lg:col-span-3 bg-white p-6 rounded-xl shadow-lg">
-                    <h3 class="font-bold text-xl mb-4 text-center text-teal-800">關鍵成果指標 (五年計畫)</h3>
+                    <h3 class="font-bold text-xl mb-4 text-center text-blue-800">關鍵成果指標 (五年計畫)</h3>
                        <div class="chart-container mx-auto max-w-xl">
                         <canvas id="objective1Chart"></canvas>
                     </div>
@@ -329,7 +329,7 @@
             <p class="text-lg text-gray-600 mb-8 max-w-4xl">本目標旨在打破專業藩籬，營造跨領域協作的學習環境，讓不同科別、不同職類的醫事人員共同交流學習。透過跨團隊合作與知識分享，培養醫療人員的系統思維與溝通協作能力，提高醫療團隊整體的綜合實力。同時引入其他領域的新知，打造具備多元視野的醫療人才。</p>
             <div class="grid lg:grid-cols-5 gap-8">
                 <div class="lg:col-span-2 bg-white p-6 rounded-xl shadow-lg">
-                       <h3 class="font-bold text-xl mb-4 text-teal-800">核心策略與執行步驟</h3>
+                       <h3 class="font-bold text-xl mb-4 text-blue-800">核心策略與執行步驟</h3>
                     <ul class="space-y-4">
                         <li>
                             <div class="strategy-header font-semibold text-gray-800 text-lg mb-2" data-target="strategy2-1">
@@ -426,7 +426,7 @@
                     </ul>
                 </div>
                 <div class="lg:col-span-3 bg-white p-6 rounded-xl shadow-lg">
-                    <h3 class="font-bold text-xl mb-4 text-center text-teal-800">關鍵成果指標</h3>
+                    <h3 class="font-bold text-xl mb-4 text-center text-blue-800">關鍵成果指標</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                            <div class="chart-container mx-auto max-w-md">
                                 <canvas id="objective2Chart1"></canvas>
@@ -449,7 +449,7 @@
             <p class="text-lg text-gray-600 mb-8 max-w-4xl">本目標旨在透過制度化的職涯規劃與能力評估機制，為醫事人員打造清晰的職涯發展藍圖。以勝任力本位醫學教育（CBME）為核心，設定各職級所需達成的核心能力與可委託專業活動（EPA）里程碑，並結合數位工具紀錄個人成長，增進人員投入自我發展的動機，培育可持續的醫療人才梯隊。</p>
                <div class="grid lg:grid-cols-5 gap-8">
                 <div class="lg:col-span-2 bg-white p-6 rounded-xl shadow-lg">
-                       <h3 class="font-bold text-xl mb-4 text-teal-800">核心策略與執行步驟</h3>
+                       <h3 class="font-bold text-xl mb-4 text-blue-800">核心策略與執行步驟</h3>
                     <ul class="space-y-4">
                         <li>
                             <div class="strategy-header font-semibold text-gray-800 text-lg mb-2" data-target="strategy3-1">
@@ -564,7 +564,7 @@
                     </ul>
                 </div>
                 <div class="lg:col-span-3 bg-white p-6 rounded-xl shadow-lg">
-                    <h3 class="font-bold text-xl mb-4 text-center text-teal-800">關鍵成果指標</h3>
+                    <h3 class="font-bold text-xl mb-4 text-center text-blue-800">關鍵成果指標</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                            <div class="chart-container mx-auto max-w-md">
                                 <canvas id="objective3Chart1"></canvas>
@@ -587,27 +587,27 @@
             <p class="text-lg text-gray-600 mb-8 max-w-4xl">本計畫透過各項核心策略的推行，預期將帶來明確且可衡量的效益，全面提升人才培育質量與組織人力發展的永續性。</p>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
                 <div class="bg-white p-6 rounded-xl shadow-lg">
-                    <p class="text-4xl font-bold text-teal-600">+25%</p>
+                    <p class="text-4xl font-bold text-blue-600">+25%</p>
                     <p class="font-semibold text-gray-700 mt-2">平均受訓時數提升</p>
                     <p class="text-gray-500 text-sm">醫事人員參與院內外持續教育的人次與時數逐年增加，每人每年平均受訓時數較計畫前提升25%，培訓完成率達到90%以上。此指標反映員工主動進修意願提高，組織整體學習氛圍更加濃厚。</p>
                 </div>
                 <div class="bg-white p-6 rounded-xl shadow-lg">
-                    <p class="text-4xl font-bold text-teal-600">+50%</p>
+                    <p class="text-4xl font-bold text-blue-600">+50%</p>
                     <p class="font-semibold text-gray-700 mt-2">跨域合作專案數成長</p>
                     <p class="text-gray-500 text-sm">跨部門/跨專業合作專案數量較計畫實施前成長逾50%，參與人員涵蓋醫院所有主要科別。超過80%的醫事人員曾參與至少一次跨領域課程或合作計畫。透過問卷調查，員工對跨團隊協作能力的自評提升20%，表示跨域學習有效增進其溝通協作技巧。</p>
                 </div>
                 <div class="bg-white p-6 rounded-xl shadow-lg">
-                    <p class="text-4xl font-bold text-teal-600">+15%</p>
+                    <p class="text-4xl font-bold text-blue-600">+15%</p>
                     <p class="font-semibold text-gray-700 mt-2">職涯發展滿意度提升</p>
                     <p class="text-gray-500 text-sm">定期的員工滿意度調查顯示，員工對職涯發展支援的滿意度較基準提升15%。此外，藉由數位職涯檔案與里程碑制度，100%的員工擁有明確記錄的職涯發展路徑。</p>
                 </div>
                 <div class="bg-white p-6 rounded-xl shadow-lg">
-                    <p class="text-4xl font-bold text-teal-600">98%</p>
+                    <p class="text-4xl font-bold text-blue-600">98%</p>
                     <p class="font-semibold text-gray-700 mt-2">住院醫師考核通過率</p>
                     <p class="text-gray-500 text-sm">透過CBME/EPA的推行與充實的訓練，醫事人員整體專業能力顯著提升。各項專業考核通過率均有改善，例如住院醫師結業考核一次通過率達到98%，較計畫前提升5個百分點。</p>
                 </div>
                    <div class="col-span-2 md:col-span-4 bg-white p-6 rounded-xl shadow-lg mt-6">
-                    <h3 class="font-bold text-xl mb-4 text-center text-teal-800">組織人力發展永續性</h3>
+                    <h3 class="font-bold text-xl mb-4 text-center text-blue-800">組織人力發展永續性</h3>
                     <p class="text-gray-600 text-sm text-center">
                         綜合以上成果，醫院將形成良性的人才發展生態系統。人員留任率提升（整體員工留任率提升15%），員工滿意度提升20%，專業能力評量平均分數提升10%。離職率下降，組織關鍵職缺的接續有人才可以補位，降低因人力斷層導致的風險。醫院也因為投入人才培育而獲得醫學中心評鑑相關加分或嘉許，在業界樹立重視人才發展的品牌形象，長遠而言提高醫療服務品質並促進醫療體系永續發展。深耕計劃措施全面納入日常營運（持續執行率100%），後續每年檢討改進至少1次，確保人才培育持續與時俱進。
                     </p>
@@ -644,8 +644,8 @@
                     datasets: [{
                         label: '數位學習參與率 (%)',
                         data: [60, null, 80, null, 90],
-                        borderColor: '#0d9488', // teal-600
-                        backgroundColor: 'rgba(13, 148, 136, 0.1)',
+                        borderColor: '#2563eb', // blue-600
+                        backgroundColor: 'rgba(37, 99, 235, 0.1)',
                         fill: true,
                         tension: 0.4,
                         spanGaps: true,
@@ -689,8 +689,8 @@
                     datasets: [{
                         label: '團隊協作素養 (5分制)',
                         data: [4.0, 4.8],
-                        backgroundColor: ['#ccfbf1', '#0d9488'], // teal-100, teal-600
-                        borderColor: '#0f766e', // teal-700
+                        backgroundColor: ['#dbeafe', '#2563eb'], // blue-100, blue-600
+                        borderColor: '#1d4ed8', // blue-700
                         borderWidth: 1
                     }]
                 },
@@ -724,8 +724,8 @@
                     labels: ['已參與跨域課程/訓練', '尚未參與'],
                     datasets: [{
                         data: [50, 50],
-                        backgroundColor: ['#0d9488', '#f0fdfa'], // teal-600, teal-50
-                        borderColor: '#ccfbf1', // teal-100
+                        backgroundColor: ['#2563eb', '#eff6ff'], // blue-600, blue-50
+                        borderColor: '#dbeafe', // blue-100
                         hoverOffset: 4
                     }]
                 },
